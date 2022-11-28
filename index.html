@@ -8,6 +8,7 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-640x920.png">
 <title>blix - mobile template</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="css/framework7.css">
 <link rel="stylesheet" href="style.css">
 <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
@@ -85,7 +86,7 @@
 					</div>			
 					<div class="navbar_right">
 					<a href="#" data-panel="right" class="open-panel"><img src="images/icons/white/user.png" alt="" title="" /></a>
-					</div>
+					</div> 
           <div class="navbar_right">
             <a href="#" data-panel="right" class="open-panel"><img src="images/icons/white/icons8-full-battery-100.png"  alt="" title="" /></a>
           </div>
@@ -143,6 +144,7 @@
 				<a href="about.html" data-view=".view-main"><img src="images/icons/blue/users.png" alt="" title="" /><span>ABOUT</span></a>
 			        <a href="index.html" data-view=".view-main"><img src="images/icons/blue/features.png" alt="" title="" /><span>FEATURES</span></a>
 				<a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/blue/lock.png" alt="" title="" /><span>LOGIN</span></a>
+        <a href="#" data-popup=".popup-connect" class="open-popup"><img src="images/icons/blue/bluetooth.png" alt="" title="" /><span>CONNECT DEVICE</span></a>
 				<!-- <a href="blog.html" data-view=".view-main"><img src="images/icons/blue/blog.png" alt="" title="" /><span>JOURNAL</span></a> -->
 				<!-- <a href="photos.html" data-view=".view-main"><img src="images/icons/blue/photos.png" alt="" title="" /><span>PHOTOS</span></a> -->
 				<!-- <a href="contact.html" data-view=".view-main"><img src="images/icons/blue/contact.png" alt="" title="" /><span>CONTACT</span></a> -->
@@ -168,7 +170,26 @@
 
       </div>
     </div>
-
+ <!-- Device Connect Popup -->
+ <div class="popup popup-connect">
+  <div class="content-block">
+      <div class="text-center">
+          <img src="images/icons/blue/bluetooth.png" class="rounded" alt="...">
+        </div>
+      <h4>CONNECT TO YOUR DEVICE</h4>
+      <p>Make Sure Bluetooth Is Turned On</p>
+      <div class="close_popup_button">
+        <a href="#" class="close-popup"><img src="images/icons/black/menu_close.png" alt="" title="" /></a>
+    </div>
+    <span class="d-block p-2" style="background-color:#B7B9BC;color: black;"><b>Available Devices </b></span>
+<span onclick="myFunction()" style="cursor: pointer;background-color: #D9D9D9;color: black;" class="d-block p-2">Maliha's Poco</span>
+<span class="d-block p-2"style="background-color: #B7B9BC;color: black;"><b>Previously Connected Devices </b></span>
+<span class="d-block p-2" style="background-color: #D9D9D9;"> <ul>
+  <li>iphone</li>
+  <li>LAPTOP-GPCP121A</li>
+</ul> </span>
+  </div>
+</div>
 	
     <!-- Login Popup -->
     <div class="popup popup-login">
@@ -251,6 +272,12 @@
     </div>
     </div>
     
+    <script>
+      // When the user clicks on <div>, open the popup
+      function myFunction() {
+         window.alert("Device Connected!");
+      }
+      </script>
 <script src="js/jquery-1.10.1.min.js"></script>
 <script src="js/jquery.validate.min.js" ></script>
 <script src="js/framework7.js"></script>
