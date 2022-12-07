@@ -1,15 +1,18 @@
-import 'package:flutter/cupertino.dart';
+import 'package:app/login.dart';
+import 'package:app/signin1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'connect.dart';
+import 'login.dart';
 
-class login extends StatefulWidget {
+class create_account extends StatefulWidget {
+  const create_account({Key? key}) : super(key: key);
+
   @override
-  State<login> createState() => _loginState();
+  State<create_account> createState() => _create_accountState();
 }
 
-class _loginState extends State<login> {
+class _create_accountState extends State<create_account> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -19,61 +22,67 @@ class _loginState extends State<login> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(10.0, 60.0, 0.0, 20.0),
+              padding: EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 20.0),
               child: Center(
                 child: Image.asset(
-                  'asset/success.png',
-                  scale: 1.2,
+                  'asset/Light Canvas-06.png',
+                  scale: 2.0,
                 ),
               ),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-              child: Text(
-                'Success',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontFamily: 'Manrope',
-                  color: Color(0xFF01BFBF),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
-              child: Text(
-                'Logged in succesfully',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontFamily: 'ManropeRegular',
-                  color: Color.fromARGB(255, 111, 106, 106),
-                ),
-              ),
+
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             SizedBox(
-              height: 100,
-              width: 100,
-              child: TextButton(
-                onPressed: () {},
-                child: Icon(
-                  Icons.check,
-                  color: Colors.white,
-                  size: 40.0,
-                ),
-                style: TextButton.styleFrom(
-                  minimumSize: const Size.fromHeight(50),
-                  backgroundColor: Color(0xFF01BFBF),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+              height: 40,
+              width: 300,
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
                   ),
+                  hintText: 'Name',
                 ),
               ),
             ),
             SizedBox(
-              height: 100,
+              height: 20,
+            ),
+            SizedBox(
+              height: 50,
+              width: 300,
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  hintText: 'Email',
+                ),
+              ),
+
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              height: 50,
+              width: 300,
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  hintText: 'Password',
+                ),
+              ),
+
+            ),
+            SizedBox(
+              height: 20,
             ),
             SizedBox(
               height: 50,
@@ -82,10 +91,10 @@ class _loginState extends State<login> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => connect()),
+                    MaterialPageRoute(builder: (context) => signin1()),
                   );
                 },
-                child: Text('Connect your device'),
+                child: Text('Sign Up'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(50),
                   backgroundColor: Color(0xFFEE6B0E),
@@ -116,3 +125,5 @@ class _loginState extends State<login> {
     );
   }
 }
+
+

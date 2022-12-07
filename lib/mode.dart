@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
 class modes extends StatefulWidget {
   @override
@@ -14,26 +15,45 @@ class _modesState extends State<modes> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Light Canvas'),
-          centerTitle: true,
-          backgroundColor: Color(0xFF008080),
+          title: Text(
+            'LIGHT CANVAS',
+            style: TextStyle(
+
+              fontFamily: 'Manrope',
+              fontSize: 28.0,
+              color: Colors.black,
+            ),
+          ),
+
+          backgroundColor: Color(0xEFF3FBF),
+          automaticallyImplyLeading: false,
+          actions: [
+            IconButton(
+              icon: Image.asset("asset/log-out.png",
+              fit: BoxFit.contain,
+              width: 500,),
+              onPressed: () {},
+            ),
+          ],
+
           elevation: 0.0,
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Padding(
+        body: Container(
+          color: Color(0xEFF3FBF),
+          //crossAxisAlignment: CrossAxisAlignment.center,
+          child: Column(
+            children: [ Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 50.0),
               child: Center(
                 child: SizedBox(
-                  height: 75,
-                  width: 300,
+                  height: 129,
+                  width: 366,
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFFEE6B0E),
                       elevation: 3,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                     onPressed: () {},
@@ -43,7 +63,7 @@ class _modesState extends State<modes> {
                       size: 60.0,
                     ),
                     label: Text(
-                      'Maliha Z',
+                      'Maliha Zerin',
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Manrope',
@@ -53,100 +73,119 @@ class _modesState extends State<modes> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 100,
-              width: 300,
-              child: Text(
-                'Select Mode',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Manrope',
-                  fontSize: 24.0,
-                  color: Color(0xFF000000),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-              child: Center(
-                child: SizedBox(
-                  height: 100,
-                  width: 300,
-                  child: ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF01BFBF),
-                      elevation: 3,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
-                    onPressed: () {},
-                    icon: Icon(
-                      // <-- Icon
-                      Icons.keyboard_alt_outlined,
-                      size: 80.0,
-                    ),
-                    label: Text(
-                      'Keyboard',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontFamily: 'Manrope',
-                      ),
-                    ), // <-- Text
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: SizedBox(
-                height: 20,
-                width: 200,
+              SizedBox(
+                height: 100,
+                width: 300,
                 child: Text(
-                  'OR',
+                  'Select Mode',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 20.0,
                     fontFamily: 'Manrope',
-                    color: Color(0xFFB7B9BC),
+                    fontSize: 24.0,
+                    color: Color(0xFF01BFBF),
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-              child: Center(
-                child: SizedBox(
-                  height: 100,
-                  width: 300,
-                  child: ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF01BFBF),
-                      elevation: 3,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+
+
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                child: Center(
+                  child: SizedBox(
+                    height: 100,
+                    width: 300,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFF01BFBF),
+                        elevation: 3,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
                       ),
-                    ),
-                    onPressed: () {},
-                    icon: Icon(
-                      // <-- Icon
-                      Icons.brush_outlined,
-                      size: 80.0,
-                    ),
-                    label: Text(
-                      'Draw Board',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontFamily: 'Manrope',
+                      onPressed: () {},
+                      icon: Icon(
+                        // <-- Icon
+                        Icons.keyboard_alt_outlined,
+                        size: 80.0,
                       ),
-                    ), // <-- Text
+                      label: Text(
+                        'Keyboard',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontFamily: 'Syne',
+                          color: Colors.black,
+                        ),
+                      ), // <-- Text
+                    ),
                   ),
                 ),
               ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+          child: Center(
+            child: SizedBox(
+              height: 100,
+              width: 300,
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF01BFBF),
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                onPressed: () {},
+                icon: Icon(
+                  // <-- Icon
+                  Icons.brush_outlined,
+                  size: 80.0,
+                ),
+                label: Text(
+                  'Draw Board',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontFamily: 'Syne',
+                    color: Colors.black,
+                  ),
+                ), // <-- Text
+              ),
             ),
+
+
+          ),),
+
+              SizedBox(
+                height: 50,
+                width: 300,
+                child: ElevatedButton(
+                  onPressed: () {
+
+                  },
+                  child: Text(
+                    "Let's Get Started",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'Manrope',
+                      color: Colors.white,
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size.fromHeight(50),
+                    backgroundColor: Color(0xFFEE6B0E),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+              ),
           ],
+          ),
         ),
-      ),
-    );
+
+
+
+        ),
+      );
   }
 }

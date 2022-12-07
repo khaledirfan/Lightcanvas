@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
               padding: EdgeInsets.fromLTRB(10.0, 60.0, 20.0, 10.0),
               child: Center(
                 child: Image.asset(
-                  'asset/laptop.png',
+                  'asset/Type.png',
                   scale: 1.2,
                 ),
               ),
@@ -37,7 +37,7 @@ class _HomeState extends State<Home> {
             Padding(
               padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
               child: Text(
-                'Experience the future by typing virtually without the keyboard',
+                'Experience the future by typing virtually without the keyboard.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16.0,

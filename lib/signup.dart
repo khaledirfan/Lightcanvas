@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'signin1.dart';
+import 'create_account.dart';
 
 class signup extends StatefulWidget {
   @override
@@ -16,13 +17,13 @@ class _signupState extends State<signup> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(10.0, 20.0, 0.0, 10.0),
+              padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 10.0),
               child: Center(
                   child: ClipRRect(
                 borderRadius: BorderRadius.circular(30.0),
                 child: Image.asset(
-                  'asset/log.png',
-                  scale: 2.0,
+                  'asset/Welcome Page.png',
+                  scale: 1.0,
                 ),
               )),
             ),
@@ -67,15 +68,29 @@ class _signupState extends State<signup> {
                   ),
                 ),
               ),
+
             ),
-            SizedBox(
-              height: 20,
+            Padding(
+              padding: EdgeInsets.fromLTRB(10,10,10,10),
+              child: Text(
+                'OR',
+                style: TextStyle(
+                  fontSize: 18.0,
+
+                  fontFamily: 'Manrope',
+                  color: Color.fromARGB(255, 111, 106, 106),
+
+                ),
+              ),
             ),
             SizedBox(
               height: 50,
               width: 300,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () { Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => create_account() ),
+                );},
                 child: Text('Sign Up'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(50),

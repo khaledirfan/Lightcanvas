@@ -18,18 +18,18 @@ class _Home2State extends State<Home2> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(10.0, 60.0, 20.0, 10.0),
+              padding: EdgeInsets.fromLTRB(60.0, 60.0, 60.0, 10.0),
               child: Center(
                 child: Image.asset(
-                  'asset/draw.png',
-                  scale: 2.0,
+                  'asset/Frame 1.jpg',
+
                 ),
               ),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 10.0),
               child: Text(
-                'Type Virtually',
+                'Draw Virtually',
                 style: TextStyle(
                   fontSize: 22.0,
                   fontFamily: 'Manrope',
@@ -39,7 +39,7 @@ class _Home2State extends State<Home2> {
             Padding(
               padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
               child: Text(
-                'Experience the future by typing virtually without the keyboard',
+                'Experience the future by drawing virtually.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16.0,

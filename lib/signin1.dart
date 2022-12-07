@@ -66,11 +66,25 @@ class _signin1State extends State<signin1> {
                   hintText: 'Password',
                 ),
               ),
+
             ),
-            SizedBox(
-              height: 30,
-              width: 20,
-            ),
+           Container(
+
+             margin: const EdgeInsets.only(top: 10.0,bottom: 20.0),
+
+
+               child: GestureDetector(
+                 onTap: () { print("I was tapped!"); },
+                 child: Text(
+                   'Forgot Password?',
+                   style: TextStyle(
+
+                     fontFamily: 'Manrope',
+                     color: Colors.blue,
+                   ),
+                 ),
+                )
+           ),
             SizedBox(
               height: 50,
               width: 300,
@@ -81,7 +95,7 @@ class _signin1State extends State<signin1> {
                     MaterialPageRoute(builder: (context) => login()),
                   );
                 },
-                child: Text('Sign Up'),
+                child: Text('Log In'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(50),
                   backgroundColor: Color(0xFFEE6B0E),
