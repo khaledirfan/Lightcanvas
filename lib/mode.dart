@@ -42,7 +42,7 @@ class _modesState extends State<modes> {
       body: Column(
           children: [  Container(
           margin: const EdgeInsets.all(20.0),
-          color: Color(0xFF01BFBF),
+          color: Color(0xFFEE6B0E),
           child: Row(
               children: [
                 //first button
@@ -92,7 +92,7 @@ class _modesState extends State<modes> {
 //second button
           Container(
             margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-            color: Colors.orange,
+            color: Color(0xFF01BFBF),
             child: Row(
                 children: [
                   Container(
@@ -113,7 +113,7 @@ class _modesState extends State<modes> {
                     style: TextStyle(
                       fontSize: 24.0,
                       fontFamily: 'Syne',
-                      color: Colors.white,
+                      color: Colors.black,
 
                     ),
                   ),
@@ -125,7 +125,7 @@ class _modesState extends State<modes> {
 //third button
           Container(
             margin: const EdgeInsets.only(left: 20.0, right: 20.0,top: 50.0),
-            color: Colors.orange,
+              color: Color(0xFF01BFBF),
             child: Row(
                 children: [
                   Container(
@@ -151,7 +151,7 @@ class _modesState extends State<modes> {
                     style: TextStyle(
                       fontSize: 24.0,
                       fontFamily: 'Syne',
-                      color: Colors.white,
+                      color: Colors.black,
 
                     ),
                   ),
