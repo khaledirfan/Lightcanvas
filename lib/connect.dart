@@ -10,6 +10,7 @@ class connect extends StatefulWidget {
 }
 
 class _connectState extends State<connect> {
+  int current_Index=0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -123,6 +124,40 @@ class _connectState extends State<connect> {
             child: Text('Skip'),
             backgroundColor: Color(0xFF01BFBF),
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+            currentIndex: current_Index,
+            selectedItemColor: Colors.teal,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.bluetooth),
+                label: 'Connect',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.mode),
+                label: 'Select Mode',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.laptop),
+                label: 'Station',
+              ),
+            ],
+            onTap: (index){
+              setState(() {
+                current_Index=index;
+                if(current_Index==1){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => modes() ),
+                  );
+                }
+                if(current_Index==2){
+                  //navigate to station page
+
+                }
+
+              });
+            }
         ),
       ),
     );
