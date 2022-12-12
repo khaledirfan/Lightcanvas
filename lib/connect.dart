@@ -12,7 +12,7 @@ class connect extends StatefulWidget {
 }
 
 class _connectState extends State<connect> {
-  int current_Index=0;
+  int current_Index = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -26,7 +26,7 @@ class _connectState extends State<connect> {
               color: Colors.black,
             ),
           ),
-          backgroundColor: Color(0xEFF3FBF),
+          backgroundColor: Color(0xFFFFFFFF),
           automaticallyImplyLeading: false,
           actions: [
             IconButton(
@@ -45,7 +45,7 @@ class _connectState extends State<connect> {
           ],
           elevation: 0.0,
         ),
-        backgroundColor: Color(0xFFFEF7F7),
+        backgroundColor: Color(0xFFEFF3FB),
         body: Column(
           children: [
             Container(
@@ -108,15 +108,19 @@ class _connectState extends State<connect> {
               //heightFactor: 0.25,
 
               child: Container(
-                margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-                padding: const EdgeInsets.all(6.0),
-                color: Color(0xFFD9D9D9),
-               // child: Text("Maliha's POCO"),
-                  child: GestureDetector(child: Text("Maliha's POCO"),onTap: (){Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => modes() ),
-                  );},)
-              ),
+                  margin: const EdgeInsets.only(left: 20.0, right: 20.0),
+                  padding: const EdgeInsets.all(6.0),
+                  color: Color(0xFFD9D9D9),
+                  // child: Text("Maliha's POCO"),
+                  child: GestureDetector(
+                    child: Text("Maliha's POCO"),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => modes()),
+                      );
+                    },
+                  )),
             ),
             FractionallySizedBox(
               widthFactor: 1.0,
@@ -145,7 +149,7 @@ class _connectState extends State<connect> {
             ),
           ],
         ),
-        
+
         // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         // floatingActionButton: Padding(
         //   padding: EdgeInsets.fromLTRB(30.0, 0.0, 0.0, 70.0),
@@ -177,27 +181,24 @@ class _connectState extends State<connect> {
                 label: 'Station',
               ),
             ],
-            onTap: (index){
+            onTap: (index) {
               setState(() {
-                current_Index=index;
-                if(current_Index==1){
+                current_Index = index;
+                if (current_Index == 1) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => modes() ),
+                    MaterialPageRoute(builder: (context) => modes()),
                   );
                 }
-                if(current_Index==2){
+                if (current_Index == 2) {
                   //navigate to station page
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => station()),
                   );
-
                 }
-
               });
-            }
-        ),
+            }),
       ),
     );
   }

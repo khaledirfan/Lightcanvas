@@ -33,7 +33,7 @@ class _stationState extends State<station> {
                 color: Colors.black,
               ),
             ),
-            backgroundColor: Color(0xEFF3FBF),
+            backgroundColor: Color(0xFFFFFFFF),
             automaticallyImplyLeading: false,
             actions: [
               IconButton(
@@ -52,8 +52,8 @@ class _stationState extends State<station> {
             ],
             elevation: 0.0,
           ),
-///////////////////////////////
-
+//////////////////sadad
+          backgroundColor: Color(0xFFEFF3FB),
           body: Column(
             ///////////////mau=in column
             children: [
@@ -345,20 +345,14 @@ class _stationState extends State<station> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          
-                            
-                            Image.asset(
-                              'asset/icons8-add-64.png',
-                              scale: 1.5,
-                            ),
-                          
-                          
-                               
-                            Image.asset(
-                              'asset/icons8-minus-64.png',
-                              scale: 1.5,
-                            ),
-                          
+                          Image.asset(
+                            'asset/icons8-add-64.png',
+                            scale: 1.5,
+                          ),
+                          Image.asset(
+                            'asset/icons8-minus-64.png',
+                            scale: 1.5,
+                          ),
                         ],
                       ),
                     ],

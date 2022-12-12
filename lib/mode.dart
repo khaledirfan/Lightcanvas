@@ -26,7 +26,7 @@ class _modesState extends State<modes> {
               color: Colors.black,
             ),
           ),
-          backgroundColor: Color(0xEFF3FBF),
+          backgroundColor: Color(0xFFFFFFFF),
           automaticallyImplyLeading: false,
           actions: [
             IconButton(
@@ -45,8 +45,8 @@ class _modesState extends State<modes> {
           ],
           elevation: 0.0,
         ),
+        backgroundColor: Color(0xFFEFF3FB),
         body: Column(
-          
           children: [
             Container(
               margin: const EdgeInsets.all(5.0),
@@ -194,10 +194,12 @@ class _modesState extends State<modes> {
               height: 50,
               width: 300,
               child: ElevatedButton(
-                onPressed: () { Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => station()),
-                );},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => station()),
+                  );
+                },
                 child: Text(
                   "Let's Get Started",
                   style: TextStyle(
@@ -249,7 +251,6 @@ class _modesState extends State<modes> {
                     context,
                     MaterialPageRoute(builder: (context) => station()),
                   );
-
                 }
               });
             }),
