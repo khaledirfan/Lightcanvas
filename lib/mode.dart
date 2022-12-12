@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'station.dart';
+import 'signup.dart';
 
 class modes extends StatefulWidget {
   @override
@@ -34,7 +35,12 @@ class _modesState extends State<modes> {
                 fit: BoxFit.contain,
                 width: 500,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => signup()),
+                );
+              },
             ),
           ],
           elevation: 0.0,

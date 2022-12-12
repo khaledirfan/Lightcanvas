@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'mode.dart';
 import 'station.dart';
+import 'signup.dart';
 
 class connect extends StatefulWidget {
   @override
@@ -16,6 +17,34 @@ class _connectState extends State<connect> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'LIGHT CANVAS',
+            style: TextStyle(
+              fontFamily: 'Manrope',
+              fontSize: 28.0,
+              color: Colors.black,
+            ),
+          ),
+          backgroundColor: Color(0xEFF3FBF),
+          automaticallyImplyLeading: false,
+          actions: [
+            IconButton(
+              icon: Image.asset(
+                "asset/log-out.png",
+                fit: BoxFit.contain,
+                width: 500,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => signup()),
+                );
+              },
+            ),
+          ],
+          elevation: 0.0,
+        ),
         backgroundColor: Color(0xFFFEF7F7),
         body: Column(
           children: [
