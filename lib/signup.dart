@@ -23,12 +23,14 @@ class _signupState extends State<signup> {
                 borderRadius: BorderRadius.circular(30.0),
                 child: Image.asset(
                   'asset/Welcome Page.png',
-                  scale: 1.0,
+                  scale: 1.05,
+                  // width: 700,
+                  // height: 300,
                 ),
               )),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
+              padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
               child: Text(
                 'Welcome',
                 style: TextStyle(
@@ -38,7 +40,7 @@ class _signupState extends State<signup> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 30.0),
+              padding: EdgeInsets.fromLTRB(30.0, 5.0, 30.0, 30.0),
               child: Text(
                 'Sign in to enter the app',
                 textAlign: TextAlign.center,
@@ -55,42 +57,47 @@ class _signupState extends State<signup> {
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => signin1() ),
-              );
+                    context,
+                    MaterialPageRoute(builder: (context) => signin1()),
+                  );
                 },
                 child: Text('Sign In'),
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size.fromHeight(50),
+                  minimumSize: const Size.fromHeight(10),
                   backgroundColor: Color(0xFF01BFBF),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
               ),
-
             ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(10,10,10,10),
-              child: Text(
-                'OR',
-                style: TextStyle(
-                  fontSize: 18.0,
+            // Padding(
+            //   padding: EdgeInsets.fromLTRB(10,10,10,10),
+            //   child: Text(
+            //     'OR',
+            //     style: TextStyle(
+            //       fontSize: 18.0,
 
-                  fontFamily: 'Manrope',
-                  color: Color.fromARGB(255, 111, 106, 106),
+            //       fontFamily: 'Manrope',
+            //       color: Color.fromARGB(255, 111, 106, 106),
 
-                ),
-              ),
+            //     ),
+            //   ),
+            // ),
+            SizedBox(
+              height: 20,
+              width: 10,
             ),
             SizedBox(
               height: 50,
               width: 300,
               child: ElevatedButton(
-                onPressed: () { Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => create_account() ),
-                );},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => create_account()),
+                  );
+                },
                 child: Text('Sign Up'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(50),
@@ -109,10 +116,10 @@ class _signupState extends State<signup> {
         //   padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 70.0),
         //   child: FloatingActionButton(
         //     onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => ),
-              // );
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(builder: (context) => ),
+        // );
         //     },
         //     child: Text('Next'),
         //     backgroundColor: Color(0xFF01BFBF),

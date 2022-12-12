@@ -26,13 +26,12 @@ class _create_accountState extends State<create_account> {
               child: Center(
                 child: Image.asset(
                   'asset/Light Canvas-06.png',
-                  scale: 2.0,
+                  width: 350,
                 ),
               ),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-
             ),
             SizedBox(
               height: 20,
@@ -63,7 +62,6 @@ class _create_accountState extends State<create_account> {
                   hintText: 'Email',
                 ),
               ),
-
             ),
             SizedBox(
               height: 20,
@@ -79,7 +77,6 @@ class _create_accountState extends State<create_account> {
                   hintText: 'Password',
                 ),
               ),
-
             ),
             SizedBox(
               height: 20,
@@ -125,5 +122,3 @@ class _create_accountState extends State<create_account> {
     );
   }
 }
-
-

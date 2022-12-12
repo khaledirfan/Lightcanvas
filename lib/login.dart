@@ -54,8 +54,8 @@ class _loginState extends State<login> {
               height: 10,
             ),
             SizedBox(
-              height: 100,
-              width: 100,
+              height: 80,
+              width: 80,
               child: TextButton(
                 onPressed: () {},
                 child: Icon(
@@ -73,7 +73,7 @@ class _loginState extends State<login> {
               ),
             ),
             SizedBox(
-              height: 100,
+              height: 50,
             ),
             SizedBox(
               height: 50,

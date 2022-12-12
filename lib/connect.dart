@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'mode.dart';
+import 'station.dart';
 
 class connect extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class _connectState extends State<connect> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFFEF7F7),
         body: Column(
           children: [
             Container(
@@ -111,20 +113,20 @@ class _connectState extends State<connect> {
           ],
         ),
         
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: Padding(
-          padding: EdgeInsets.fromLTRB(30.0, 0.0, 0.0, 70.0),
-          child: FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => modes() ),
-              );
-            },
-            child: Text('Skip'),
-            backgroundColor: Color(0xFF01BFBF),
-          ),
-        ),
+        // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        // floatingActionButton: Padding(
+        //   padding: EdgeInsets.fromLTRB(30.0, 0.0, 0.0, 70.0),
+        //   child: FloatingActionButton(
+        //     onPressed: () {
+        //       Navigator.push(
+        //         context,
+        //         MaterialPageRoute(builder: (context) => modes() ),
+        //       );
+        //     },
+        //     child: Text('Skip'),
+        //     backgroundColor: Color(0xFF01BFBF),
+        //   ),
+        // ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: current_Index,
             selectedItemColor: Colors.teal,
@@ -153,6 +155,10 @@ class _connectState extends State<connect> {
                 }
                 if(current_Index==2){
                   //navigate to station page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => station()),
+                  );
 
                 }
 
