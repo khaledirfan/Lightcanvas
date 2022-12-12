@@ -67,7 +67,7 @@ class _stationState extends State<station> {
                           EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                       child: Container(
                         height: 120,
-                        width: 180,
+                        width: 150,
                         child: Column(
                           children: [
                             Image.asset(
@@ -118,7 +118,7 @@ class _stationState extends State<station> {
                           EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                       child: Container(
                         height: 120,
-                        width: 180,
+                        width: 150,
                         child: Container(
                           height: 120,
                           width: 150,
@@ -311,7 +311,7 @@ class _stationState extends State<station> {
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: Container(
                   height: 80,
-                  width: 500,
+                  width: 400,
                   decoration: BoxDecoration(
                     color: Color(0xFFFFFFFF),
                     borderRadius: BorderRadius.only(
@@ -343,23 +343,22 @@ class _stationState extends State<station> {
                         ),
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Padding(
-                            padding:
-                                EdgeInsets.only(top: 0, left: 50, right: 100),
-                            child: Image.asset(
+                          
+                            
+                            Image.asset(
                               'asset/icons8-add-64.png',
                               scale: 1.5,
                             ),
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsets.only(top: 0, right: 40, left: 90),
-                            child: Image.asset(
+                          
+                          
+                               
+                            Image.asset(
                               'asset/icons8-minus-64.png',
                               scale: 1.5,
                             ),
-                          ),
+                          
                         ],
                       ),
                     ],
