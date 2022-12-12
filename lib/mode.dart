@@ -194,7 +194,10 @@ class _modesState extends State<modes> {
               height: 50,
               width: 300,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () { Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => station()),
+                );},
                 child: Text(
                   "Let's Get Started",
                   style: TextStyle(

@@ -111,7 +111,11 @@ class _connectState extends State<connect> {
                 margin: const EdgeInsets.only(left: 20.0, right: 20.0),
                 padding: const EdgeInsets.all(6.0),
                 color: Color(0xFFD9D9D9),
-                child: Text("Maliha's POCO"),
+               // child: Text("Maliha's POCO"),
+                  child: GestureDetector(child: Text("Maliha's POCO"),onTap: (){Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => modes() ),
+                  );},)
               ),
             ),
             FractionallySizedBox(

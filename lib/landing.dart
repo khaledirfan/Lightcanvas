@@ -1,11 +1,33 @@
+import 'dart:async';
+
+import 'package:app/main.dart';
 import 'package:flutter/material.dart';
+import 'package:app/home.dart';
 
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState(){
+    super.initState();
+    _navigatehome();
+  }
+  _navigatehome() async{
+    await Future.delayed(Duration(milliseconds: 3000), () {
+      print("Wait for 3000 milliseconds");});
+    Navigator.pushReplacement(
+        context,MaterialPageRoute(builder: (context) => Home()));
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,8 +38,10 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
+
   }
 }
+
 
 class MyWidget extends StatelessWidget {
   @override
@@ -31,7 +55,7 @@ class MyWidget extends StatelessWidget {
                   "asset/01_Splash .png"),
               fit: BoxFit.cover)),
       padding: EdgeInsets.only(top: 50.0),
-     
+
     );
   }
 }

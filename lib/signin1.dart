@@ -56,7 +56,7 @@ class _signin1State extends State<signin1> {
               height: 20,
             ),
             SizedBox(
-              height: 50,
+              height: 40,
               width: 300,
               child: TextField(
                 decoration: InputDecoration(
@@ -68,23 +68,12 @@ class _signin1State extends State<signin1> {
               ),
 
             ),
-           Container(
+            Container(
 
-             margin: const EdgeInsets.only(top: 10.0,bottom: 20.0),
+              margin: const EdgeInsets.only(top: 10.0,bottom: 20.0),
 
 
-               child: GestureDetector(
-                 onTap: () { print("I was tapped!"); },
-                 child: Text(
-                   'Forgot Password?',
-                   style: TextStyle(
-
-                     fontFamily: 'Manrope',
-                     color: Colors.blue,
-                   ),
-                 ),
-                )
-           ),
+            ),
             SizedBox(
               height: 50,
               width: 300,
