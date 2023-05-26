@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:app/main.dart';
 import 'package:flutter/material.dart';
-import 'package:app/home.dart';
+import 'package:app/home2.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
       print("Wait for 3000 milliseconds");
     });
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Home()));
+        context, MaterialPageRoute(builder: (context) => Home2()));
   }
 
   @override
@@ -49,7 +49,7 @@ class MyWidget extends StatelessWidget {
     return Container(
       child: Center(
         child: Image.asset(
-          'asset/01_Splash .png',
+          'asset/01_Splash.jpg',
           // height:600,
           width: 410,
           fit: BoxFit.fill,

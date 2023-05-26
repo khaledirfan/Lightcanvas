@@ -1,10 +1,12 @@
 import 'package:app/connect.dart';
+import 'package:app/learnmode.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'station.dart';
 import 'signup.dart';
+import 'freehand.dart';
 
 class modes extends StatefulWidget {
   @override
@@ -95,9 +97,9 @@ class _modesState extends State<modes> {
                 'Select Mode',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'Manrope',
+                  fontFamily: 'Syne',
                   fontSize: 20.0,
-                  color: Color(0xFF01BFBF),
+                  color: Color(0xDD000000),
                 ),
               ),
             ),
@@ -110,7 +112,9 @@ class _modesState extends State<modes> {
                 borderRadius: BorderRadius.circular(20),
                 color: Color(0xFF01BFBF),
               ),
-              child: Row(children: [
+
+              child: Row(children:
+                  [
                 Padding(
                   padding: EdgeInsets.only(
                     left: 10.0,
@@ -136,18 +140,26 @@ class _modesState extends State<modes> {
                           // ),
                           )),
                 ),
-                Text(
-                  'Keyboard',
+
+              GestureDetector(
+                onTap: (){ Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => freehand()),
+                );},
+                child:   Text(
+                  'Free-Hand Mode',
                   style: TextStyle(
                     fontSize: 24.0,
                     fontFamily: 'Syne',
                     color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
+              )
               ]),
             ),
 //third button
             Container(
+
               margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 50.0),
               // color: Color(0xFF01BFBF),
 
@@ -155,7 +167,8 @@ class _modesState extends State<modes> {
                 borderRadius: BorderRadius.circular(20),
                 color: Color(0xFF01BFBF),
               ),
-              child: Row(children: [
+              child:
+              Row(children: [
                 Padding(
                   padding: EdgeInsets.only(
                     left: 10.0,
@@ -175,50 +188,59 @@ class _modesState extends State<modes> {
                           // ),
                           )),
                 ),
-                Text(
-                  'Drawing Board',
-                  style: TextStyle(
-                    fontSize: 24.0,
-                    fontFamily: 'Syne',
-                    color: Color.fromARGB(255, 255, 255, 255),
+                GestureDetector(
+                  onTap: (){ Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => learnmode()),
+                  );},
+                  child:   Text(
+                    'Learning Mode',
+                    style: TextStyle(
+                      fontSize: 24.0,
+                      fontFamily: 'Syne',
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
                   ),
-                ),
+                )
               ]),
+
             ),
 
 //let's get started button
-            Padding(
-              padding: EdgeInsets.all(20),
-            ),
-            SizedBox(
-              height: 50,
-              width: 300,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => station()),
-                  );
-                },
-                child: Text(
-                  "Let's Get Started",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: 'Manrope',
-                    color: Colors.white,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size.fromHeight(50),
-                  backgroundColor: Color(0xFFEE6B0E),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-              ),
-            ),
+//             Padding(
+//               padding: EdgeInsets.all(20),
+//             ),
+//             SizedBox(
+//               height: 50,
+//               width: 300,
+//               child: ElevatedButton(
+//                 onPressed: () {
+//                   Navigator.push(
+//                     context,
+//                     MaterialPageRoute(builder: (context) => freehand()),
+//                   );
+//                 },
+//                 child: Text(
+//                   "Let's Get Started",
+//                   style: TextStyle(
+//                     fontSize: 20.0,
+//                     fontFamily: 'Manrope',
+//                     color: Colors.white,
+//                   ),
+//                 ),
+//                 style: ElevatedButton.styleFrom(
+//                   minimumSize: const Size.fromHeight(50),
+//                   backgroundColor: Color(0xFFEE6B0E),
+//                   shape: RoundedRectangleBorder(
+//                     borderRadius: BorderRadius.circular(20),
+//                   ),
+//                 ),
+//               ),
+//             ),
           ],
         ),
+
+        //navbar//
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: current_Index,
             selectedItemColor: Colors.teal,
