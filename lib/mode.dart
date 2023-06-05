@@ -267,13 +267,13 @@ class _modesState extends State<modes> {
                     MaterialPageRoute(builder: (context) => connect()),
                   );
                 }
-                if (current_Index == 2) {
+            /*    if (current_Index == 2) {
                   //navigate to station page
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => station()),
                   );
-                }
+                }*/
               });
             }),
       ),

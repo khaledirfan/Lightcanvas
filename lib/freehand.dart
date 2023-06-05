@@ -7,6 +7,8 @@ import 'connect.dart';
 import 'signin1.dart';
 import 'signup.dart';
 import 'station.dart';
+import 'flask_test.dart';
+import 'camera_feed.dart';
 
 class freehand extends StatefulWidget {
   @override
@@ -105,12 +107,35 @@ int current_Index = 2;
             ),
 
 //second button
-            Container(
-
+            Padding(
+              padding: EdgeInsets.all(20),
             ),
-//third button
-            Container(
-
+            SizedBox(
+              height: 50,
+              width: 300,
+              child: ElevatedButton(
+                onPressed: () {
+                 // Navigator.push(
+                  //  context,
+                  //  MaterialPageRoute(builder: (context) => LiveCameraScreen(cameraUrl: 'http://your_camera_url')),
+                  //);
+                },
+                child: Text(
+                  "Live Feed",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontFamily: 'Manrope',
+                    color: Colors.white,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size.fromHeight(50),
+                  backgroundColor: Color(0xFFEE6B0E),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ),
             ),
 
 //let's get started button
@@ -124,11 +149,11 @@ int current_Index = 2;
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => freehand()),
+                    MaterialPageRoute(builder: (context) => ImageScreen()),
                   );
                 },
                 child: Text(
-                  "Save",
+                  "Display Image",
                   style: TextStyle(
                     fontSize: 20.0,
                     fontFamily: 'Manrope',

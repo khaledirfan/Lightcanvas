@@ -190,13 +190,13 @@ class _connectState extends State<connect> {
                     MaterialPageRoute(builder: (context) => modes()),
                   );
                 }
-                if (current_Index == 2) {
+              /*  if (current_Index == 2) {
                   //navigate to station page
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => station()),
                   );
-                }
+                }*/
               });
             }),
       ),
