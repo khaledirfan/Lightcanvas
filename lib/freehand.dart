@@ -115,10 +115,10 @@ int current_Index = 2;
               width: 300,
               child: ElevatedButton(
                 onPressed: () {
-                 // Navigator.push(
-                  //  context,
-                  //  MaterialPageRoute(builder: (context) => LiveCameraScreen(cameraUrl: 'http://your_camera_url')),
-                  //);
+                  Navigator.push(
+                    context,
+                   MaterialPageRoute(builder: (context) => LiveCameraScreen(cameraUrl: 'http://192.168.145.200:5000/video_feed')),
+                  );
                 },
                 child: Text(
                   "Live Feed",
