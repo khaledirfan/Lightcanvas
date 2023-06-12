@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "171259556642",
+    "project_id": "light-canvas-aeb0c",
+    "storage_bucket": "light-canvas-aeb0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171259556642:android:8cc3d59bd6300f22d1ab7b",
+        "android_client_info": {
+          "package_name": "com.idp.lightcanvas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171259556642-pi2mc5u91jmardqudp16p1vqp7ldm8jt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMCduhGHknDUfl99KRXRaM3hjzS_rGG9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171259556642-pi2mc5u91jmardqudp16p1vqp7ldm8jt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

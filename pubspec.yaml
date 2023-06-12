@@ -32,11 +32,11 @@ dependencies:
 
   flutter:
     sdk: flutter
-    
-  http: ^0.13.0
-  image_picker: ^0.8.7+5
+  camera: ^0.10.5+2
   path_provider: ^2.0.15
-  cupertino_icons: ^1.0.2
+  # cupertino_icons: ^1.0.2
+  # http: ^1.0.0
+  http: ^0.13.0
   flutter_inappwebview: ^5.7.2+3
 
 
@@ -47,6 +47,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  cupertino_icons: ^1.0.2
+  firebase_core: ^2.13.1
+  firebase_storage: ^11.2.2
+  firebase_auth: ^4.6.2
+  cloud_firestore: ^4.8.0
+  fluttertoast: ^8.2.2
+   
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
