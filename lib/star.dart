@@ -1,7 +1,10 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:io';
+import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart';
+
 import 'mode.dart';
 import 'connect.dart';
 import 'signin1.dart';
@@ -15,6 +18,21 @@ class star extends StatefulWidget {
 
 class _starState extends State<star> {
   int current_Index = 2;
+  bool loading = false;
+  File? _image;
+  final picker = ImagePicker();
+
+  Future getImageGallery() async {
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery, imageQuality: 100);
+    setState(() {
+      if (pickedFile == null) {
+        print('No image picked');
+      } else {
+        _image = File(pickedFile.path);
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -56,40 +74,32 @@ class _starState extends State<star> {
                 borderRadius: BorderRadius.circular(20),
                 color: Color(0xFFEE6B0E),
               ),
-              child: Row(children: [
-                //first button
-                Container(
+              child: Row(
+                children: [
+                  //first button
+                  Container(
                     width: 100,
                     height: 100,
                     child: Image.asset(
                       'asset/user.png',
                       scale: 1.5,
                     ),
-                    decoration: BoxDecoration(
-
-                      // image: DecorationImage(
-                      //   image: AssetImage(
-                      //       'asset/user.png',
-
-                      //       ),
-
-                      //   fit: BoxFit.fill,
-                      // ),
-                    )),
-                Text(
-                  'Maliha Zerin',
-                  style: TextStyle(
-                    fontSize: 24.0,
-                    fontFamily: 'Manrope',
-                    color: Colors.white,
                   ),
-                ),
-              ]),
+                  Text(
+                    'Maliha Zerin',
+                    style: TextStyle(
+                      fontSize: 24.0,
+                      fontFamily: 'Manrope',
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
             ),
             //Select Mode Text
             Padding(
-                padding:
-                EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0)),
+              padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+            ),
             SizedBox(
               height: 50,
               width: 300,
@@ -104,101 +114,107 @@ class _starState extends State<star> {
               ),
             ),
 
-//second button
+            //second button
             Container(
-
-
-                // margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-                height: 200.0,
-                width: 200.0,
-                //margin: const EdgeInsets.only(top: 150.0),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                        'asset/star.png'),
-                    fit: BoxFit.fill,
-                  ),
-                  shape: BoxShape.circle,
-                ),
-
-
+              height: 200.0,
+              width: 200.0,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+              ),
+              child: _image != null
+                  ? Image.file(_image!.absolute)
+                  : Center(child: Icon(Icons.image)),
             ),
-//third button
+
+            //third button
             Container(
-
-            ),
-
-//let's get started button
-            Padding(
-              padding: EdgeInsets.all(20),
-            ),
-            SizedBox(
-              height: 50,
-              width: 300,
-              child: ElevatedButton(
-                onPressed: () {
-
-                },
-                child: Text(
-                  "Save",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: 'Manrope',
-                    color: Colors.white,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size.fromHeight(50),
-                  backgroundColor: Color(0xFFEE6B0E),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
+              child: CustomButton(
+                title: 'Pick From Gallery',
+                icon: Icons.image_outlined,
+                onClick: () => getImageGallery(),
               ),
             ),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
-            currentIndex: current_Index,
-            selectedItemColor: Colors.teal,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.bluetooth),
-                label: 'Connect',
+          currentIndex: current_Index,
+          selectedItemColor: Colors.teal,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bluetooth),
+              label: 'Connect',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.mode),
+              label: 'Select Mode',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.laptop),
+              label: 'Station',
+            ),
+          ],
+          onTap: (index) {
+            setState(() {
+              current_Index = index;
+              if (current_Index == 0) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => connect()),
+                );
+              }
+              if (current_Index == 1) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => modes()),
+                );
+              }
+              if (current_Index == 2) {
+                //navigate to station page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => station()),
+                );
+              }
+            });
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  final String title;
+  final IconData icon;
+  final VoidCallback onClick;
+
+  const CustomButton({
+    required this.title,
+    required this.icon,
+    required this.onClick,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 50,
+      width: 300,
+      child: ElevatedButton(
+        onPressed: onClick,
+        child: Row(
+          children: [
+            Icon(icon),
+            SizedBox(width: 20),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Manrope',
+                color: Colors.white,
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.mode),
-                label: 'Select Mode',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.laptop),
-                label: 'Station',
-              ),
-            ],
-            onTap: (index) {
-              setState(() {
-                current_Index = index;
-                if (current_Index == 0) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => connect()),
-                  );
-                }
-                if (current_Index == 1) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => modes()),
-                  );
-                }
-                if (current_Index == 2) {
-                  //navigate to station page
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => station()),
-                  );
-                }
-              });
-            }),
+            ),
+          ],
+        ),
       ),
     );
   }
