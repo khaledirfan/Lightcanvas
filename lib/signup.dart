@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'signin1.dart';
 import 'create_account.dart';
 import 'testlogin.dart'; ////////////// new
+import 'test_signup.dart';
 
 class signup extends StatefulWidget {
   @override
@@ -98,7 +99,7 @@ class _signupState extends State<signup> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => create_account()),
+                    MaterialPageRoute(builder: (context) => SignupScreen()),
                   );
                 },
                 child: Text('Sign Up'),

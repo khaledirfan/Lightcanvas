@@ -1,38 +1,34 @@
-import 'dart:async';
+import 'package:flutter/material.dart';
 import 'landing_sevices.dart';
 import 'package:app/main.dart';
-import 'package:flutter/material.dart';
 import 'package:app/home2.dart';
+import 'postscreen.dart';
+import 'landing.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _MyAppState extends State<MyApp> {
-  SplashServices splashScreen = SplashServices(); ///////////////////////
-
+class _SplashScreenState extends State<SplashScreen> {
+  SplashServices splashScreen = SplashServices();
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
     splashScreen.isLogin(context);
-    // _navigatehome();
   }
 
-  // _navigatehome() async {
-  //   await Future.delayed(Duration(milliseconds: 4000), () {
-  //     print("Wait for 3000 milliseconds");
-  //   });
-  //   Navigator.pushReplacement(
-  //       context, MaterialPageRoute(builder: (context) => Home2()));
+  // @override
+  // Widget build(BuildContext context) {
+  //   return const Scaffold(
+  //     body: Center(
+  //       child: Text("Light Canvas"),
+  //     ),
+  //   );
   // }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,6 +40,7 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
+  
 }
 
 class MyWidget extends StatelessWidget {
@@ -58,8 +55,6 @@ class MyWidget extends StatelessWidget {
           fit: BoxFit.fill,
         ),
       ),
-
-
     );
   }
 }

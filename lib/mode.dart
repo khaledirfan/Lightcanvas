@@ -6,7 +6,12 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'station.dart';
 import 'signup.dart';
-import 'freehand.dart';
+import 'freehand.dart';///
+
+import 'home2.dart';
+import 'package:app/utils.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
 
 class modes extends StatefulWidget {
   @override
@@ -15,6 +20,7 @@ class modes extends StatefulWidget {
 
 class _modesState extends State<modes> {
   int current_Index = 1;
+  final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,19 +37,28 @@ class _modesState extends State<modes> {
           backgroundColor: Color(0xFFFFFFFF),
           automaticallyImplyLeading: false,
           actions: [
+
+
             IconButton(
-              icon: Image.asset(
+                onPressed: () {
+                  auth.signOut().then((value) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Home2()));
+                  }).onError((error, stackTrace) {
+                    Utils().toastMessage(error.toString());
+                  });
+                },
+                icon: Image.asset(
                 "asset/log-out.png",
                 fit: BoxFit.contain,
                 width: 500,
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => signup()),
-                );
-              },
             ),
+            SizedBox(
+              width: 20,
+            )
+
+
           ],
           elevation: 0.0,
         ),

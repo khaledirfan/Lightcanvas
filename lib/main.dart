@@ -1,4 +1,5 @@
 import 'package:app/landing.dart';
+import 'package:app/splashscreen.dart';
 import 'package:flutter/material.dart';
 //import 'home.dart';
 import 'home2.dart';
@@ -12,7 +13,8 @@ void main() async {
     theme: ThemeData(
       primarySwatch: Colors.teal,
     ),
-    home: MyApp(),
+    // home: MyApp(),
+    home: SplashScreen(),
   ));
 }
 

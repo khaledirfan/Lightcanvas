@@ -1,3 +1,4 @@
+import 'package:app/mode.dart';
 import 'package:app/postscreen.dart';
 import 'package:app/test_roundbutton.dart';
 import 'package:app/utils.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'test_roundbutton.dart';
 import 'test_signup.dart';
+import 'mode.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -41,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
         .then((value) {
       Utils().toastMessage(value.user!.email.toString());
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => PostScreen()));
+          context, MaterialPageRoute(builder: (context) => modes()));
       setState(() {
         loading = false;
       });

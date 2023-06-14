@@ -1,10 +1,11 @@
-import 'package:app/login.dart';
+import 'package:app/login_successful.dart';
 import 'package:app/test_roundbutton.dart';
 import 'package:app/testlogin.dart';
 import 'package:app/utils.dart';
 import 'package:flutter/material.dart';
 import 'test_roundbutton.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'testlogin.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -38,12 +39,20 @@ class _SignupScreenState extends State<SignupScreen> {
         .createUserWithEmailAndPassword(
             email: emailController.text.toString(),
             password: passwordController.text.toString())
-        .then((value) {
+        .then(
+          
+          (value) {
+            Navigator.push(
+          context, MaterialPageRoute(builder: (context) => LoginScreen()));
       setState(() {
         loading = false;
       });
-    }).onError((error, stackTrace) {
+    }
+    
+    
+    ).onError((error, stackTrace) {
       Utils().toastMessage(error.toString());
+      
       setState(() {
         loading = false;
       });

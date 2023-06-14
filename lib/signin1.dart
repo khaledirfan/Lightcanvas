@@ -1,8 +1,8 @@
-import 'package:app/login.dart';
+import 'package:app/login_successful.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'login.dart';
+import 'login_successful.dart';
 
 class signin1 extends StatefulWidget {
   @override

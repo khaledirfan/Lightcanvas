@@ -8,12 +8,19 @@ import 'connect.dart';
 import 'signin1.dart';
 import 'signup.dart';
 
+import 'home2.dart';
+import 'package:app/utils.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
+
 class learnmode2 extends StatefulWidget {
   @override
   State<learnmode2> createState() => _learnmode2State();
 }
 
 class _learnmode2State extends State<learnmode2> {
+    final auth = FirebaseAuth.instance; ///////////////
+
   int current_Index = 2;
   @override
   Widget build(BuildContext context) {
@@ -32,18 +39,23 @@ class _learnmode2State extends State<learnmode2> {
           automaticallyImplyLeading: false,
           actions: [
             IconButton(
-              icon: Image.asset(
+                onPressed: () {
+                  auth.signOut().then((value) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Home2()));
+                  }).onError((error, stackTrace) {
+                    Utils().toastMessage(error.toString());
+                  });
+                },
+                icon: Image.asset(
                 "asset/log-out.png",
                 fit: BoxFit.contain,
                 width: 500,
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => signup()),
-                );
-              },
             ),
+            SizedBox(
+              width: 20,
+            )
           ],
           elevation: 0.0,
         ),

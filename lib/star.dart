@@ -11,6 +11,11 @@ import 'signin1.dart';
 import 'signup.dart';
 import 'station.dart';
 
+import 'home2.dart';
+import 'package:app/utils.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
+
 class star extends StatefulWidget {
   @override
   State<star> createState() => _starState();
@@ -35,6 +40,8 @@ class _starState extends State<star> {
 
   @override
   Widget build(BuildContext context) {
+      final auth = FirebaseAuth.instance; ///////////////
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -50,18 +57,23 @@ class _starState extends State<star> {
           automaticallyImplyLeading: false,
           actions: [
             IconButton(
-              icon: Image.asset(
+                onPressed: () {
+                  auth.signOut().then((value) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Home2()));
+                  }).onError((error, stackTrace) {
+                    Utils().toastMessage(error.toString());
+                  });
+                },
+                icon: Image.asset(
                 "asset/log-out.png",
                 fit: BoxFit.contain,
                 width: 500,
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => signup()),
-                );
-              },
             ),
+            SizedBox(
+              width: 20,
+            )
           ],
           elevation: 0.0,
         ),
