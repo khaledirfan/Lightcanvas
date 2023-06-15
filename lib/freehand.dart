@@ -10,7 +10,7 @@ import 'station.dart';
 import 'flask_test.dart';
 import 'camera_feed.dart';
 import 'package:app/utils.dart';
-
+import 'feed_test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'home2.dart';
 
@@ -20,8 +20,8 @@ class freehand extends StatefulWidget {
 }
 
 class _freehandState extends State<freehand> {
-    final auth = FirebaseAuth.instance;
-int current_Index = 2;
+  final auth = FirebaseAuth.instance;
+  int current_Index = 2;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,15 +39,15 @@ int current_Index = 2;
           automaticallyImplyLeading: false,
           actions: [
             IconButton(
-                onPressed: () {
-                  auth.signOut().then((value) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Home2()));
-                  }).onError((error, stackTrace) {
-                    Utils().toastMessage(error.toString());
-                  });
-                },
-                icon: Image.asset(
+              onPressed: () {
+                auth.signOut().then((value) {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Home2()));
+                }).onError((error, stackTrace) {
+                  Utils().toastMessage(error.toString());
+                });
+              },
+              icon: Image.asset(
                 "asset/log-out.png",
                 fit: BoxFit.contain,
                 width: 500,
@@ -79,15 +79,15 @@ int current_Index = 2;
                     ),
                     decoration: BoxDecoration(
 
-                      // image: DecorationImage(
-                      //   image: AssetImage(
-                      //       'asset/user.png',
+                        // image: DecorationImage(
+                        //   image: AssetImage(
+                        //       'asset/user.png',
 
-                      //       ),
+                        //       ),
 
-                      //   fit: BoxFit.fill,
-                      // ),
-                    )),
+                        //   fit: BoxFit.fill,
+                        // ),
+                        )),
                 Text(
                   'Maliha Zerin',
                   style: TextStyle(
@@ -101,7 +101,7 @@ int current_Index = 2;
             //Select Mode Text
             Padding(
                 padding:
-                EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0)),
+                    EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0)),
             SizedBox(
               height: 50,
               width: 300,
@@ -125,9 +125,16 @@ int current_Index = 2;
               width: 300,
               child: ElevatedButton(
                 onPressed: () {
+                  // context,
+                  // MaterialPageRoute(
+                  // builder: (context) => LiveCameraScreen(
+                  //  cameraUrl:
+                  //   'http://192.168.206.200:5000/video_feed')),
+
+                  // );
                   Navigator.push(
                     context,
-                   MaterialPageRoute(builder: (context) => LiveCameraScreen(cameraUrl: 'http://192.168.145.200:5000/video_feed')),
+                    MaterialPageRoute(builder: (context) => LiveCameraFeed()),
                   );
                 },
                 child: Text(
