@@ -1,11 +1,12 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as path;
+import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'dart:io';
-
 import 'signup.dart';
 import 'mode.dart';
 import 'connect.dart';
@@ -29,15 +30,10 @@ class _ImageScreenState extends State<ImageScreen> {
 
     // Convert the image format to JPG
     final image = await decodeImageFromList(response.bodyBytes);
-    final jpgImage = await FlutterImageCompress.compressWithList(
-      response.bodyBytes,
-      minHeight: 1920,
-      minWidth: 1080,
-      quality: 90,
-      rotate: 0,
-    );
+    final jpgImage = await encodeJpg(image as Image);
 
     // Save the JPG image to file
+    await file.writeAsBytes(jpgImage);
     await file.writeAsBytes(jpgImage);
 
     // Save the image to the device's gallery
@@ -47,7 +43,7 @@ class _ImageScreenState extends State<ImageScreen> {
       showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          title: Text("Image saved successfully!"),
+          title: Text("Image saved Successfully!"),
           content: Image.file(file),
         ),
       );
@@ -130,4 +126,6 @@ class _ImageScreenState extends State<ImageScreen> {
       ),
     );
   }
+
+  encodeJpg(Image image) {}
 }
