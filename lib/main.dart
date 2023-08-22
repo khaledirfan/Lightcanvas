@@ -1,10 +1,9 @@
-import 'package:app/landing.dart';
 import 'package:app/splashscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:tflite/tflite.dart';
+import 'package:image_picker/image_picker.dart';
 //import 'home.dart';
-import 'home2.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +13,7 @@ void main() async {
       primarySwatch: Colors.teal,
     ),
     // home: MyApp(),
-    home: SplashScreen(),
+    home: const SplashScreen(),
   ));
 }
 

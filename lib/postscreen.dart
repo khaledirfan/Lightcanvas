@@ -16,19 +16,19 @@ class _PostScreenState extends State<PostScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Post Screeen!'),
+        title: const Text('Post Screeen!'),
         actions: [
           IconButton(
               onPressed: () {
                 auth.signOut().then((value) {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Home2()));
+                      MaterialPageRoute(builder: (context) => const Home2()));
                 }).onError((error, stackTrace) {
                   Utils().toastMessage(error.toString());
                 });
               },
-              icon: Icon(Icons.logout_outlined)),
-          SizedBox(
+              icon: const Icon(Icons.logout_outlined)),
+          const SizedBox(
             width: 20,
           )
         ],

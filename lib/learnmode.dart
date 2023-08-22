@@ -1,20 +1,16 @@
 import 'package:app/learnmode2.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'mode.dart';
 import 'connect.dart';
-import 'signin1.dart';
-import 'signup.dart';
 import 'station.dart';
-import 'learnmode2.dart';
 import 'home2.dart';
 import 'package:app/utils.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 
 class learnmode extends StatefulWidget {
+  const learnmode({super.key});
+
   @override
   State<learnmode> createState() => _learnmodeState();
 }
@@ -27,7 +23,7 @@ class _learnmodeState extends State<learnmode> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'LIGHT CANVAS',
             style: TextStyle(
               fontFamily: 'Manrope',
@@ -35,60 +31,60 @@ class _learnmodeState extends State<learnmode> {
               color: Colors.black,
             ),
           ),
-          backgroundColor: Color(0xFFFFFFFF),
+          backgroundColor: const Color(0xFFFFFFFF),
           automaticallyImplyLeading: false,
           actions: [
             IconButton(
-                onPressed: () {
-                  auth.signOut().then((value) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Home2()));
-                  }).onError((error, stackTrace) {
-                    Utils().toastMessage(error.toString());
-                  });
-                },
-               icon: Image.asset(
+              onPressed: () {
+                auth.signOut().then((value) {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Home2()));
+                }).onError((error, stackTrace) {
+                  Utils().toastMessage(error.toString());
+                });
+              },
+              icon: Image.asset(
                 "asset/log-out.png",
                 fit: BoxFit.contain,
                 width: 500,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             )
           ],
           elevation: 0.0,
         ),
-        backgroundColor: Color(0xFFEFF3FB),
+        backgroundColor: const Color(0xFFEFF3FB),
         body: Column(
           children: [
             Container(
               margin: const EdgeInsets.all(5.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xFFEE6B0E),
+                color: const Color(0xFFEE6B0E),
               ),
               child: Row(children: [
                 //first button
                 Container(
                     width: 100,
                     height: 100,
+                    decoration: const BoxDecoration(
+
+                        // image: DecorationImage(
+                        //   image: AssetImage(
+                        //       'asset/user.png',
+
+                        //       ),
+
+                        //   fit: BoxFit.fill,
+                        // ),
+                        ),
                     child: Image.asset(
                       'asset/user.png',
                       scale: 1.5,
-                    ),
-                    decoration: BoxDecoration(
-
-                      // image: DecorationImage(
-                      //   image: AssetImage(
-                      //       'asset/user.png',
-
-                      //       ),
-
-                      //   fit: BoxFit.fill,
-                      // ),
                     )),
-                Text(
+                const Text(
                   'Maliha Zerin',
                   style: TextStyle(
                     fontSize: 24.0,
@@ -99,10 +95,10 @@ class _learnmodeState extends State<learnmode> {
               ]),
             ),
             //Select Mode Text
-            Padding(
+            const Padding(
                 padding:
-                EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0)),
-            SizedBox(
+                    EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0)),
+            const SizedBox(
               height: 50,
               width: 300,
               child: Text(
@@ -116,79 +112,76 @@ class _learnmodeState extends State<learnmode> {
               ),
             ),
 
-
 //Level 1 button
-            Padding(
-              padding: EdgeInsets.all(5),
-            ),
-            SizedBox(
-              height: 50,
-              width: 400,
-              child: ElevatedButton.icon(
-
-                icon: Text(
-                  "Level 1: Lines",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: 'Manrope',
-                    color: Colors.white,
-                  ),
-                ),
-                label: Icon(Icons.lock_open),
-                onPressed: (){Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => learnmode2()),
-                );},
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size.fromHeight(50),
-                  backgroundColor: Color(0xFF01BFBF),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-              )
-            ),
-
-            //level 2 button
-
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(5),
             ),
             SizedBox(
                 height: 50,
                 width: 400,
                 child: ElevatedButton.icon(
-
-                  icon: Text(
-                    "Level 2: Geometric Shape",
+                  icon: const Text(
+                    "Level 1: Geometric Shapes",
                     style: TextStyle(
                       fontSize: 20.0,
                       fontFamily: 'Manrope',
                       color: Colors.white,
                     ),
                   ),
-                  label: Icon(Icons.lock),
-                  onPressed: (){},
+                  label: const Icon(Icons.lock_open),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const learnmode2()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size.fromHeight(50),
-                    backgroundColor: Color(0xFF01BFBF),
+                    backgroundColor: const Color(0xFF01BFBF),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                )
-            ),
+                )),
 
-            //level 3 button
-            Padding(
+            //level 2 button
+
+            const Padding(
               padding: EdgeInsets.all(5),
             ),
             SizedBox(
                 height: 50,
                 width: 400,
                 child: ElevatedButton.icon(
+                  icon: const Text(
+                    "Level 2: Double Shapes",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'Manrope',
+                      color: Colors.white,
+                    ),
+                  ),
+                  label: const Icon(Icons.lock),
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size.fromHeight(50),
+                    backgroundColor: const Color(0xFF01BFBF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                )),
 
-                  icon: Text(
+            //level 3 button
+            const Padding(
+              padding: EdgeInsets.all(5),
+            ),
+            SizedBox(
+                height: 50,
+                width: 400,
+                child: ElevatedButton.icon(
+                  icon: const Text(
                     "Level 3: Alphabet",
                     style: TextStyle(
                       fontSize: 20.0,
@@ -196,17 +189,16 @@ class _learnmodeState extends State<learnmode> {
                       color: Colors.white,
                     ),
                   ),
-                  label: Icon(Icons.lock),
-                  onPressed: (){},
+                  label: const Icon(Icons.lock),
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size.fromHeight(50),
-                    backgroundColor: Color(0xFF01BFBF),
+                    backgroundColor: const Color(0xFF01BFBF),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                )
-            ),
+                )),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -232,20 +224,20 @@ class _learnmodeState extends State<learnmode> {
                 if (current_Index == 0) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => connect()),
+                    MaterialPageRoute(builder: (context) => const connect()),
                   );
                 }
                 if (current_Index == 1) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => modes()),
+                    MaterialPageRoute(builder: (context) => const modes()),
                   );
                 }
                 if (current_Index == 2) {
                   //navigate to station page
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => station()),
+                    MaterialPageRoute(builder: (context) => const station()),
                   );
                 }
               });

@@ -1,9 +1,5 @@
-import 'package:app/login_successful.dart';
 import 'package:app/signin1.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'login_successful.dart';
 
 class create_account extends StatefulWidget {
   const create_account({Key? key}) : super(key: key);
@@ -17,12 +13,12 @@ class _create_accountState extends State<create_account> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFFFFFFFF),
+        backgroundColor: const Color(0xFFFFFFFF),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 20.0),
+              padding: const EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 20.0),
               child: Center(
                 child: Image.asset(
                   'asset/Light Canvas-06.png',
@@ -30,10 +26,10 @@ class _create_accountState extends State<create_account> {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
@@ -48,7 +44,7 @@ class _create_accountState extends State<create_account> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
@@ -63,7 +59,7 @@ class _create_accountState extends State<create_account> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
@@ -78,7 +74,7 @@ class _create_accountState extends State<create_account> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
@@ -88,17 +84,17 @@ class _create_accountState extends State<create_account> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => signin1()),
+                    MaterialPageRoute(builder: (context) => const signin1()),
                   );
                 },
-                child: Text('Sign Up'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(50),
-                  backgroundColor: Color(0xFFEE6B0E),
+                  backgroundColor: const Color(0xFFEE6B0E),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
+                child: const Text('Sign Up'),
               ),
             ),
           ],

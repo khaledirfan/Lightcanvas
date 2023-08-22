@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'landing_sevices.dart';
-import 'package:app/main.dart';
-import 'package:app/home2.dart';
-import 'postscreen.dart';
-import 'landing.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -31,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
   // }
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
@@ -44,6 +40,8 @@ class _SplashScreenState extends State<SplashScreen> {
 }
 
 class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

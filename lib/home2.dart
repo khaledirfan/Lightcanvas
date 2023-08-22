@@ -13,12 +13,12 @@ class _Home2State extends State<Home2> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFFFFFFFF),
+        backgroundColor: const Color(0xFFFFFFFF),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(60.0, 60.0, 60.0, 10.0),
+              padding: const EdgeInsets.fromLTRB(60.0, 60.0, 60.0, 10.0),
               child: Center(
                 child: Image.asset(
                   'asset/Frame 1.jpg',
@@ -26,7 +26,7 @@ class _Home2State extends State<Home2> {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 10.0),
               child: Text(
                 'Draw Virtually',
@@ -36,7 +36,7 @@ class _Home2State extends State<Home2> {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
               child: Text(
                 'Experience the future by drawing virtually.',
@@ -52,20 +52,20 @@ class _Home2State extends State<Home2> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: Padding(
-          padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 70.0),
+          padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 70.0),
           child: FloatingActionButton(
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => signup()),
+                MaterialPageRoute(builder: (context) => const signup()),
               );
             },
-            child: Text(
+            
+            backgroundColor: const Color(0xFF01BFBF),
+            child: const Text(
               'Next',
               
               ),
-            
-            backgroundColor: Color(0xFF01BFBF),
           ),
         ),
       ),

@@ -1,11 +1,8 @@
-import 'dart:async';
 import 'landing_sevices.dart';
-import 'package:app/main.dart';
 import 'package:flutter/material.dart';
-import 'package:app/home2.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -35,7 +32,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
@@ -47,6 +44,8 @@ class _MyAppState extends State<MyApp> {
 }
 
 class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:app/login_successful.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'bluetooth.dart';
 
 
 
@@ -25,7 +20,7 @@ class bluetooth extends StatelessWidget {
                height: 200.0,
                width: 200.0,
                margin: const EdgeInsets.only(top: 150.0),
-               decoration: BoxDecoration(
+               decoration: const BoxDecoration(
                  image: DecorationImage(
                    image: AssetImage(
                        'asset/bluetooth.png'),
@@ -38,7 +33,7 @@ class bluetooth extends StatelessWidget {
              Container(
                  margin: const EdgeInsets.all(10.0),
 
-               child: Text(
+               child: const Text(
                  'Connect To Your Device',
                  style: TextStyle(
                      fontSize: 24,
@@ -49,7 +44,7 @@ class bluetooth extends StatelessWidget {
              Container(
                margin: const EdgeInsets.only(bottom: 10.0),
 
-               child: Text("Make Sure Bluetooth Is Turned On"),
+               child: const Text("Make Sure Bluetooth Is Turned On"),
              ),
              FractionallySizedBox(
 
@@ -60,9 +55,9 @@ class bluetooth extends StatelessWidget {
                  margin: const EdgeInsets.only(left: 20.0, right: 20.0),
 
                  padding: const EdgeInsets.all(6.0),
-                 color: Color( 0xFF6D6D72),
+                 color: const Color( 0xFF6D6D72),
 
-                 child: Text("Available Devices"),
+                 child: const Text("Available Devices"),
                ),
              ),
 
@@ -76,9 +71,9 @@ class bluetooth extends StatelessWidget {
                  margin: const EdgeInsets.only(left: 20.0, right: 20.0),
 
                  padding: const EdgeInsets.all(6.0),
-                 color: Color( 0xFFB7B9BC),
+                 color: const Color( 0xFFB7B9BC),
 
-                 child: Text("Maliha's POCO"),
+                 child: const Text("Maliha's POCO"),
                ),
              ),
              FractionallySizedBox(
@@ -90,9 +85,9 @@ class bluetooth extends StatelessWidget {
                  margin: const EdgeInsets.only(left: 20.0, right: 20.0),
 
                  padding: const EdgeInsets.all(6.0),
-                 color: Color( 0xFF6D6D72),
+                 color: const Color( 0xFF6D6D72),
 
-                 child: Text("Previously Connected Devices"),
+                 child: const Text("Previously Connected Devices"),
                ),
              ),
              FractionallySizedBox(
@@ -104,9 +99,9 @@ class bluetooth extends StatelessWidget {
                  margin: const EdgeInsets.only(left: 20.0, right: 20.0),
 
                  padding: const EdgeInsets.all(6.0),
-                 color: Color( 0xFFB7B9BC),
+                 color: const Color( 0xFFB7B9BC),
 
-                 child: Text(
+                 child: const Text(
                    'iphone',
                    style: TextStyle(
 

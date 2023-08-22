@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'signin1.dart';
-import 'create_account.dart';
 import 'testlogin.dart'; ////////////// new
 import 'test_signup.dart';
 
 class signup extends StatefulWidget {
+  const signup({super.key});
+
   @override
   State<signup> createState() => _signupState();
 }
@@ -14,12 +14,12 @@ class _signupState extends State<signup> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFFFFFFFF),
+        backgroundColor: const Color(0xFFFFFFFF),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 10.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 10.0),
               child: Center(
                   child: ClipRRect(
                 borderRadius: BorderRadius.circular(30.0),
@@ -31,7 +31,7 @@ class _signupState extends State<signup> {
                 ),
               )),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
               child: Text(
                 'Welcome',
@@ -41,7 +41,7 @@ class _signupState extends State<signup> {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.fromLTRB(30.0, 5.0, 30.0, 30.0),
               child: Text(
                 'Sign in to enter the app',
@@ -62,17 +62,17 @@ class _signupState extends State<signup> {
                     context,
                     // MaterialPageRoute(builder: (context) => signin1()),
                     ///////////////////////////////////////////////////////////////////////////////////////////
-                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                    MaterialPageRoute(builder: (context) => const LoginScreen()),
                   );
                 },
-                child: Text('Sign In'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(10),
-                  backgroundColor: Color(0xFF01BFBF),
+                  backgroundColor: const Color(0xFF01BFBF),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
+                child: const Text('Sign In'),
               ),
             ),
             // Padding(
@@ -88,7 +88,7 @@ class _signupState extends State<signup> {
             //     ),
             //   ),
             // ),
-            SizedBox(
+            const SizedBox(
               height: 20,
               width: 10,
             ),
@@ -99,17 +99,17 @@ class _signupState extends State<signup> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SignupScreen()),
+                    MaterialPageRoute(builder: (context) => const SignupScreen()),
                   );
                 },
-                child: Text('Sign Up'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(50),
-                  backgroundColor: Color(0xFFEE6B0E),
+                  backgroundColor: const Color(0xFFEE6B0E),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
+                child: const Text('Sign Up'),
               ),
             ),
           ],

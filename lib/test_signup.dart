@@ -1,11 +1,8 @@
-import 'package:app/login_successful.dart';
 import 'package:app/test_roundbutton.dart';
 import 'package:app/testlogin.dart';
 import 'package:app/utils.dart';
 import 'package:flutter/material.dart';
-import 'test_roundbutton.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'testlogin.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -20,7 +17,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   void dispose() {
@@ -30,8 +27,7 @@ class _SignupScreenState extends State<SignupScreen> {
     passwordController.dispose();
   }
 
-
-  void signup(){
+  void signup() {
     setState(() {
       loading = true;
     });
@@ -39,20 +35,15 @@ class _SignupScreenState extends State<SignupScreen> {
         .createUserWithEmailAndPassword(
             email: emailController.text.toString(),
             password: passwordController.text.toString())
-        .then(
-          
-          (value) {
-            Navigator.push(
-          context, MaterialPageRoute(builder: (context) => LoginScreen()));
+        .then((value) {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const LoginScreen()));
       setState(() {
         loading = false;
       });
-    }
-    
-    
-    ).onError((error, stackTrace) {
+    }).onError((error, stackTrace) {
       Utils().toastMessage(error.toString());
-      
+
       setState(() {
         loading = false;
       });
@@ -62,10 +53,7 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // automaticallyImplyLeading: false,
-        title: Text('Sign Up'),
-      ),
+      
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
@@ -76,6 +64,17 @@ class _SignupScreenState extends State<SignupScreen> {
                 key: _formKey,
                 child: Column(
                   children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 20.0),
+                      child: Center(
+                        child: Image.asset(
+                          'asset/Light Canvas-06.png',
+                          height: 300,
+                          width: 400,
+                          
+                        ),
+                      ),
+                    ),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       controller: emailController,
@@ -90,7 +89,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         return null;
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     TextFormField(
@@ -126,15 +125,15 @@ class _SignupScreenState extends State<SignupScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Already have an account?"),
+                const Text("Already have an account?"),
                 TextButton(
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => LoginScreen()));
+                              builder: (context) => const LoginScreen()));
                     },
-                    child: Text('Login'))
+                    child: const Text('Login'))
               ],
             ),
           ],

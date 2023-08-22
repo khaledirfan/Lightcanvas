@@ -1,20 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'mode.dart';
 import 'connect.dart';
-import 'signin1.dart';
-import 'signup.dart';
 import 'station.dart';
 import 'flask_test.dart';
-import 'camera_feed.dart';
 import 'package:app/utils.dart';
 import 'feed_test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'home2.dart';
 
 class freehand extends StatefulWidget {
+  const freehand({super.key});
+
   @override
   State<freehand> createState() => _freehandState();
 }
@@ -27,7 +23,7 @@ class _freehandState extends State<freehand> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'LIGHT CANVAS',
             style: TextStyle(
               fontFamily: 'Manrope',
@@ -35,14 +31,14 @@ class _freehandState extends State<freehand> {
               color: Colors.black,
             ),
           ),
-          backgroundColor: Color(0xFFFFFFFF),
+          backgroundColor: const Color(0xFFFFFFFF),
           automaticallyImplyLeading: false,
           actions: [
             IconButton(
               onPressed: () {
                 auth.signOut().then((value) {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Home2()));
+                      MaterialPageRoute(builder: (context) => const Home2()));
                 }).onError((error, stackTrace) {
                   Utils().toastMessage(error.toString());
                 });
@@ -53,31 +49,27 @@ class _freehandState extends State<freehand> {
                 width: 500,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             )
           ],
           elevation: 0.0,
         ),
-        backgroundColor: Color(0xFFEFF3FB),
+        backgroundColor: const Color(0xFFEFF3FB),
         body: Column(
           children: [
             Container(
               margin: const EdgeInsets.all(5.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xFFEE6B0E),
+                color: const Color(0xFFEE6B0E),
               ),
               child: Row(children: [
                 //first button
                 Container(
                     width: 100,
                     height: 100,
-                    child: Image.asset(
-                      'asset/user.png',
-                      scale: 1.5,
-                    ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
 
                         // image: DecorationImage(
                         //   image: AssetImage(
@@ -87,8 +79,12 @@ class _freehandState extends State<freehand> {
 
                         //   fit: BoxFit.fill,
                         // ),
-                        )),
-                Text(
+                        ),
+                    child: Image.asset(
+                      'asset/user.png',
+                      scale: 1.5,
+                    )),
+                const Text(
                   'Maliha Zerin',
                   style: TextStyle(
                     fontSize: 24.0,
@@ -99,10 +95,10 @@ class _freehandState extends State<freehand> {
               ]),
             ),
             //Select Mode Text
-            Padding(
+            const Padding(
                 padding:
                     EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0)),
-            SizedBox(
+            const SizedBox(
               height: 50,
               width: 300,
               child: Text(
@@ -117,7 +113,13 @@ class _freehandState extends State<freehand> {
             ),
 
 //second button
-            Padding(
+            const Padding(
+              padding: EdgeInsets.all(20),
+            ),
+            
+
+//let's get started button
+            const Padding(
               padding: EdgeInsets.all(20),
             ),
             SizedBox(
@@ -125,63 +127,24 @@ class _freehandState extends State<freehand> {
               width: 300,
               child: ElevatedButton(
                 onPressed: () {
-                  // context,
-                  // MaterialPageRoute(
-                  // builder: (context) => LiveCameraScreen(
-                  //  cameraUrl:
-                  //   'http://192.168.206.200:5000/video_feed')),
-
-                  // );
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LiveCameraFeed()),
+                    MaterialPageRoute(builder: (context) => const ImageScreen()),
                   );
                 },
-                child: Text(
-                  "Live Feed",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: 'Manrope',
-                    color: Colors.white,
-                  ),
-                ),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(50),
-                  backgroundColor: Color(0xFFEE6B0E),
+                  backgroundColor: const Color(0xFFEE6B0E),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
-              ),
-            ),
-
-//let's get started button
-            Padding(
-              padding: EdgeInsets.all(20),
-            ),
-            SizedBox(
-              height: 50,
-              width: 300,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ImageScreen()),
-                  );
-                },
-                child: Text(
+                child: const Text(
                   "Display Image",
                   style: TextStyle(
                     fontSize: 20.0,
                     fontFamily: 'Manrope',
                     color: Colors.white,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size.fromHeight(50),
-                  backgroundColor: Color(0xFFEE6B0E),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
                   ),
                 ),
               ),
@@ -211,24 +174,27 @@ class _freehandState extends State<freehand> {
                 if (current_Index == 0) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => connect()),
+                    MaterialPageRoute(builder: (context) => const connect()),
                   );
                 }
                 if (current_Index == 1) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => modes()),
+                    MaterialPageRoute(builder: (context) => const modes()),
                   );
                 }
                 if (current_Index == 2) {
                   //navigate to station page
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => station()),
+                    MaterialPageRoute(builder: (context) => const station()),
                   );
                 }
               });
             }),
+
+
+            
       ),
     );
   }

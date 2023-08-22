@@ -1,0 +1,4 @@
+0 eclipse
+1 triangle
+2 Rectangle
+3 other

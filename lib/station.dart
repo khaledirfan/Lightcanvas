@@ -1,15 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'mode.dart';
 import 'connect.dart';
-import 'signin1.dart';
 import 'signup.dart';
 
 const List<String> list = <String>['16:9', '16:10'];
 
 class station extends StatefulWidget {
+  const station({super.key});
+
   @override
   State<station> createState() => _stationState();
 }
@@ -25,7 +23,7 @@ class _stationState extends State<station> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            title: Text(
+            title: const Text(
               'LIGHT CANVAS',
               style: TextStyle(
                 fontFamily: 'Manrope',
@@ -33,7 +31,7 @@ class _stationState extends State<station> {
                 color: Colors.black,
               ),
             ),
-            backgroundColor: Color(0xFFFFFFFF),
+            backgroundColor: const Color(0xFFFFFFFF),
             automaticallyImplyLeading: false,
             actions: [
               IconButton(
@@ -45,7 +43,7 @@ class _stationState extends State<station> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => signup()),
+                    MaterialPageRoute(builder: (context) => const signup()),
                   );
                 },
               ),
@@ -53,7 +51,7 @@ class _stationState extends State<station> {
             elevation: 0.0,
           ),
 //////////////////sadad
-          backgroundColor: Color(0xFFEFF3FB),
+          backgroundColor: const Color(0xFFEFF3FB),
           body: Column(
             ///////////////mau=in column
             children: [
@@ -64,30 +62,13 @@ class _stationState extends State<station> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                          const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                       child: Container(
                         height: 120,
                         width: 150,
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              'asset/icons8-low-battery-96.png',
-                              scale: 1.1,
-                            ),
-                            Text(
-                              '57%',
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                fontFamily: 'Manrope',
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromARGB(255, 0, 0, 0),
-                              ),
-                            ),
-                          ],
-                        ),
                         decoration: BoxDecoration(
-                          color: Color(0xFFFFFFFF),
-                          borderRadius: BorderRadius.only(
+                          color: const Color(0xFFFFFFFF),
+                          borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(10),
                               topRight: Radius.circular(10),
                               bottomLeft: Radius.circular(10),
@@ -98,7 +79,24 @@ class _stationState extends State<station> {
                               spreadRadius: 5,
                               blurRadius: 7,
                               offset:
-                                  Offset(0, 3), // changes position of shadow
+                                  const Offset(0, 3), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              'asset/icons8-low-battery-96.png',
+                              scale: 1.1,
+                            ),
+                            const Text(
+                              '57%',
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontFamily: 'Manrope',
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(255, 0, 0, 0),
+                              ),
                             ),
                           ],
                         ),
@@ -115,11 +113,28 @@ class _stationState extends State<station> {
 
                     Padding(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                          const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                       child: Container(
                         height: 120,
                         width: 150,
-                        child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFFFFFFF),
+                          borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10),
+                              bottomLeft: Radius.circular(10),
+                              bottomRight: Radius.circular(10)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.4),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset:
+                                  const Offset(0, 3), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: SizedBox(
                           height: 120,
                           width: 150,
                           child: Column(
@@ -128,7 +143,7 @@ class _stationState extends State<station> {
                                 'asset/icons8-timer-96.png',
                                 scale: 1.1,
                               ),
-                              Text(
+                              const Text(
                                 '45 mins',
                                 style: TextStyle(
                                   fontSize: 18.0,
@@ -140,34 +155,17 @@ class _stationState extends State<station> {
                             ],
                           ),
                         ),
-                        decoration: BoxDecoration(
-                          color: Color(0xFFFFFFFF),
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10),
-                              bottomLeft: Radius.circular(10),
-                              bottomRight: Radius.circular(10)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.4),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset:
-                                  Offset(0, 3), // changes position of shadow
-                            ),
-                          ],
-                        ),
                       ),
                     )
                   ],
                 ),
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                    child: Container(
+                    child: SizedBox(
                       height: 30,
                       width: 200,
                       child: Text(
@@ -184,13 +182,13 @@ class _stationState extends State<station> {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: Container(
                   height: 90,
                   width: 500,
                   decoration: BoxDecoration(
-                    color: Color(0xFFFFFFFF),
-                    borderRadius: BorderRadius.only(
+                    color: const Color(0xFFFFFFFF),
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(10),
                         topRight: Radius.circular(10),
                         bottomLeft: Radius.circular(10),
@@ -200,13 +198,13 @@ class _stationState extends State<station> {
                         color: Colors.grey.withOpacity(0.4),
                         spreadRadius: 5,
                         blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
+                        offset: const Offset(0, 3), // changes position of shadow
                       ),
                     ],
                   ),
                   child: Column(
                     children: [
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(top: 10),
                         child: Text(
                           'Brightness',
@@ -220,14 +218,14 @@ class _stationState extends State<station> {
                       ),
                       Slider(
                         value: _currentSliderValue,
-                        onChanged: (new_currentSliderValue) {
+                        onChanged: (newCurrentslidervalue) {
                           setState(() =>
-                              _currentSliderValue = new_currentSliderValue);
+                              _currentSliderValue = newCurrentslidervalue);
                         },
                         min: 0,
                         max: 100,
                         divisions: 5,
-                        activeColor: Color(0xFF01BFBF),
+                        activeColor: const Color(0xFF01BFBF),
                       ),
                     ],
                   ),
@@ -235,13 +233,13 @@ class _stationState extends State<station> {
               ),
 // sdsadaadasdaddsada
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: Container(
                   height: 50,
                   width: 500,
                   decoration: BoxDecoration(
-                    color: Color(0xFFFFFFFF),
-                    borderRadius: BorderRadius.only(
+                    color: const Color(0xFFFFFFFF),
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(10),
                         topRight: Radius.circular(10),
                         bottomLeft: Radius.circular(10),
@@ -251,13 +249,13 @@ class _stationState extends State<station> {
                         color: Colors.grey.withOpacity(0.4),
                         spreadRadius: 5,
                         blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
+                        offset: const Offset(0, 3), // changes position of shadow
                       ),
                     ],
                   ),
                   child: Row(
                     children: [
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(top: 10, left: 20, right: 100),
                         child: Text(
                           'Aspect Ratio',
@@ -271,7 +269,7 @@ class _stationState extends State<station> {
                       ),
                       ////////////
                       Padding(
-                        padding: EdgeInsets.only(left: 20),
+                        padding: const EdgeInsets.only(left: 20),
                         child: DropdownButton<String>(
                           value: dropdownValue,
                           icon: const Icon(Icons.arrow_downward),
@@ -284,7 +282,7 @@ class _stationState extends State<station> {
                           ),
                           underline: Container(
                             height: 2,
-                            color: Color(0xFFEE6B0E),
+                            color: const Color(0xFFEE6B0E),
                           ),
                           onChanged: (String? value) {
                             // This is called when the user selects an item.
@@ -308,13 +306,13 @@ class _stationState extends State<station> {
 
               //////////zoom in
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: Container(
                   height: 80,
                   width: 400,
                   decoration: BoxDecoration(
-                    color: Color(0xFFFFFFFF),
-                    borderRadius: BorderRadius.only(
+                    color: const Color(0xFFFFFFFF),
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(10),
                         topRight: Radius.circular(10),
                         bottomLeft: Radius.circular(10),
@@ -324,13 +322,13 @@ class _stationState extends State<station> {
                         color: Colors.grey.withOpacity(0.4),
                         spreadRadius: 5,
                         blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
+                        offset: const Offset(0, 3), // changes position of shadow
                       ),
                     ],
                   ),
                   child: Column(
                     children: [
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(top: 10),
                         child: Text(
                           'Zoom  In / Out',
@@ -362,13 +360,13 @@ class _stationState extends State<station> {
 
               //// Freeze
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: Container(
                   height: 90,
                   width: 500,
                   decoration: BoxDecoration(
-                    color: Color(0xFFFFFFFF),
-                    borderRadius: BorderRadius.only(
+                    color: const Color(0xFFFFFFFF),
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(10),
                         topRight: Radius.circular(10),
                         bottomLeft: Radius.circular(10),
@@ -378,13 +376,13 @@ class _stationState extends State<station> {
                         color: Colors.grey.withOpacity(0.4),
                         spreadRadius: 5,
                         blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
+                        offset: const Offset(0, 3), // changes position of shadow
                       ),
                     ],
                   ),
                   child: Column(
                     children: [
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(top: 10),
                         child: Text(
                           'Freeze Screen',
@@ -399,7 +397,7 @@ class _stationState extends State<station> {
                       Center(
                         child: Padding(
                           padding:
-                              EdgeInsets.only(top: 10, left: 50, right: 50),
+                              const EdgeInsets.only(top: 10, left: 50, right: 50),
                           child: Image.asset(
                             'asset/icons8-pause-button-96.png',
                             scale: 2.0,
@@ -439,13 +437,13 @@ class _stationState extends State<station> {
                   if (current_Index == 0) {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => connect()),
+                      MaterialPageRoute(builder: (context) => const connect()),
                     );
                   }
                   if (current_Index == 1) {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => modes()),
+                      MaterialPageRoute(builder: (context) => const modes()),
                     );
                   }
                 });

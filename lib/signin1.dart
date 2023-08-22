@@ -1,10 +1,9 @@
 import 'package:app/login_successful.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'login_successful.dart';
 
 class signin1 extends StatefulWidget {
+  const signin1({super.key});
+
   @override
   State<signin1> createState() => _signin1State();
 }
@@ -14,12 +13,12 @@ class _signin1State extends State<signin1> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFFFFFFFF),
+        backgroundColor: const Color(0xFFFFFFFF),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 20.0),
+              padding: const EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 20.0),
               child: Center(
                 child: Image.asset(
                   'asset/signin.png',
@@ -27,7 +26,7 @@ class _signin1State extends State<signin1> {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
               child: Text(
                 'Sign In',
@@ -37,7 +36,7 @@ class _signin1State extends State<signin1> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
@@ -52,7 +51,7 @@ class _signin1State extends State<signin1> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
@@ -81,17 +80,17 @@ class _signin1State extends State<signin1> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => login()),
+                    MaterialPageRoute(builder: (context) => const login()),
                   );
                 },
-                child: Text('Log In'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(50),
-                  backgroundColor: Color(0xFFEE6B0E),
+                  backgroundColor: const Color(0xFFEE6B0E),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
+                child: const Text('Log In'),
               ),
             ),
           ],

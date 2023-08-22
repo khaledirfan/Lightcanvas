@@ -37,15 +37,18 @@ dependencies:
   # cupertino_icons: ^1.0.2
   # http: ^1.0.0
   http: ^0.13.0
-  image_picker: ^0.8.7+5
+  image_picker: ^0.8.9
   image_gallery_saver: '^2.0.1'
   path: ^1.8.3
   flutter_image_compress: ^2.0.3
   fijkplayer: ^0.10.1
   video_player: ^2.2.5
-
-
+  tflite: ^1.1.2
+  firebase_auth: ^4.6.2
   flutter_inappwebview: ^5.7.2+3
+  audioplayers: 1.1.0
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -84,6 +87,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - asset/
+    - asset/audio1.mp3
+    - asset/audio2.mp3
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

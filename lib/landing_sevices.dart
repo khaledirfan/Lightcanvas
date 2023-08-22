@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:app/home2.dart';
 import 'package:flutter/material.dart'
     show BuildContext, MaterialPageRoute, Navigator;
-import 'postscreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'mode.dart';
 
@@ -16,13 +15,13 @@ class SplashServices {
       Timer(
           const Duration(seconds: 3),
           () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => modes())));
+              context, MaterialPageRoute(builder: (context) => const modes())));
     }
     else{
       Timer(
           const Duration(seconds: 2),
           () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Home2())));
+              context, MaterialPageRoute(builder: (context) => const Home2())));
     }
   }
 }

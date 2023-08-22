@@ -1,12 +1,7 @@
 import 'package:app/star.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'mode.dart';
 import 'connect.dart';
-import 'signin1.dart';
-import 'signup.dart';
 
 import 'home2.dart';
 import 'package:app/utils.dart';
@@ -14,6 +9,8 @@ import 'package:app/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class learnmode2 extends StatefulWidget {
+  const learnmode2({super.key});
+
   @override
   State<learnmode2> createState() => _learnmode2State();
 }
@@ -27,7 +24,7 @@ class _learnmode2State extends State<learnmode2> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'LIGHT CANVAS',
             style: TextStyle(
               fontFamily: 'Manrope',
@@ -35,14 +32,14 @@ class _learnmode2State extends State<learnmode2> {
               color: Colors.black,
             ),
           ),
-          backgroundColor: Color(0xFFFFFFFF),
+          backgroundColor: const Color(0xFFFFFFFF),
           automaticallyImplyLeading: false,
           actions: [
             IconButton(
                 onPressed: () {
                   auth.signOut().then((value) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Home2()));
+                        MaterialPageRoute(builder: (context) => const Home2()));
                   }).onError((error, stackTrace) {
                     Utils().toastMessage(error.toString());
                   });
@@ -53,31 +50,27 @@ class _learnmode2State extends State<learnmode2> {
                 width: 500,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             )
           ],
           elevation: 0.0,
         ),
-        backgroundColor: Color(0xFFEFF3FB),
+        backgroundColor: const Color(0xFFEFF3FB),
         body: Column(
           children: [
             Container(
               margin: const EdgeInsets.all(5.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xFFEE6B0E),
+                color: const Color(0xFFEE6B0E),
               ),
               child: Row(children: [
                 //first button
                 Container(
                     width: 100,
                     height: 100,
-                    child: Image.asset(
-                      'asset/user.png',
-                      scale: 1.5,
-                    ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
 
                       // image: DecorationImage(
                       //   image: AssetImage(
@@ -87,8 +80,12 @@ class _learnmode2State extends State<learnmode2> {
 
                       //   fit: BoxFit.fill,
                       // ),
+                    ),
+                    child: Image.asset(
+                      'asset/user.png',
+                      scale: 1.5,
                     )),
-                Text(
+                const Text(
                   'Maliha Zerin',
                   style: TextStyle(
                     fontSize: 24.0,
@@ -99,10 +96,10 @@ class _learnmode2State extends State<learnmode2> {
               ]),
             ),
             //Select Mode Text
-            Padding(
+            const Padding(
                 padding:
                 EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0)),
-            SizedBox(
+            const SizedBox(
               height: 50,
               width: 300,
               child: Text(
@@ -116,7 +113,7 @@ class _learnmode2State extends State<learnmode2> {
               ),
 
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
               width: 300,
               child: Text(
@@ -134,28 +131,27 @@ class _learnmode2State extends State<learnmode2> {
 
 
 //Level 1 button
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(5),
             ),
             SizedBox(
                 height: 50,
                 width: 400,
                 child: ElevatedButton(
-                  child: Text(
-                    "Task 1 : Straight Line",
+                  onPressed: (){},
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size.fromHeight(50),
+                    backgroundColor: const Color(0xFF01BFBF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: const Text(
+                    "Task 1 : Rectangle",
                     style: TextStyle(
                       fontSize: 20.0,
                       fontFamily: 'Manrope',
                       color: Colors.white,
-                    ),
-                  ),
-
-                  onPressed: (){},
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size.fromHeight(50),
-                    backgroundColor: Color(0xFF01BFBF),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 )
@@ -163,7 +159,7 @@ class _learnmode2State extends State<learnmode2> {
 
             //level 2 button
 
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(5),
             ),
             SizedBox(
@@ -171,28 +167,28 @@ class _learnmode2State extends State<learnmode2> {
                 width: 400,
                 child: ElevatedButton(
 
-                  child: Text(
-                    "Task 2: Geometric Wave Line",
+                  onPressed: (){},
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size.fromHeight(50),
+                    backgroundColor: const Color(0xFF01BFBF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+
+                  child: const Text(
+                    "Task 2: Triangle",
                     style: TextStyle(
                       fontSize: 20.0,
                       fontFamily: 'Manrope',
                       color: Colors.white,
-                    ),
-                  ),
-
-                  onPressed: (){},
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size.fromHeight(50),
-                    backgroundColor: Color(0xFF01BFBF),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 )
             ),
 
             //level 3 button
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(5),
             ),
             SizedBox(
@@ -200,28 +196,28 @@ class _learnmode2State extends State<learnmode2> {
                 width: 400,
                 child: ElevatedButton(
 
-                  child: Text(
-                    "Task 3: Cross",
+                  onPressed: (){},
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size.fromHeight(50),
+                    backgroundColor: const Color(0xFF01BFBF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+
+                  child: const Text(
+                    "Task 3: Star",
                     style: TextStyle(
                       fontSize: 20.0,
                       fontFamily: 'Manrope',
                       color: Colors.white,
-                    ),
-                  ),
-
-                  onPressed: (){},
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size.fromHeight(50),
-                    backgroundColor: Color(0xFF01BFBF),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 )
             ),
 
             ///level 4 button
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(5),
             ),
             SizedBox(
@@ -229,23 +225,24 @@ class _learnmode2State extends State<learnmode2> {
                 width: 400,
                 child: ElevatedButton(
 
-                  child: Text(
-                    "Task 4: Star",
+                  onPressed: (){ Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Star()),
+                  );},
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size.fromHeight(50),
+                    backgroundColor: const Color(0xFF01BFBF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+
+                  child: const Text(
+                    "Task 4: Eclipse",
                     style: TextStyle(
                       fontSize: 20.0,
                       fontFamily: 'Manrope',
                       color: Colors.white,
-                    ),
-                  ),
-                  onPressed: (){ Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => star()),
-                  );},
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size.fromHeight(50),
-                    backgroundColor: Color(0xFF01BFBF),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 )
@@ -275,13 +272,13 @@ class _learnmode2State extends State<learnmode2> {
                 if (current_Index == 0) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => connect()),
+                    MaterialPageRoute(builder: (context) => const connect()),
                   );
                 }
                 if (current_Index == 1) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => modes()),
+                    MaterialPageRoute(builder: (context) => const modes()),
                   );
                 }
                 if (current_Index == 2) {

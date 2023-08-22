@@ -1,11 +1,6 @@
 import 'package:app/connect.dart';
 import 'package:app/learnmode.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'station.dart';
-import 'signup.dart';
 import 'freehand.dart';///
 
 import 'home2.dart';
@@ -14,6 +9,8 @@ import 'package:app/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class modes extends StatefulWidget {
+  const modes({super.key});
+
   @override
   State<modes> createState() => _modesState();
 }
@@ -26,7 +23,7 @@ class _modesState extends State<modes> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'LIGHT CANVAS',
             style: TextStyle(
               fontFamily: 'Manrope',
@@ -34,7 +31,7 @@ class _modesState extends State<modes> {
               color: Colors.black,
             ),
           ),
-          backgroundColor: Color(0xFFFFFFFF),
+          backgroundColor: const Color(0xFFFFFFFF),
           automaticallyImplyLeading: false,
           actions: [
 
@@ -43,7 +40,7 @@ class _modesState extends State<modes> {
                 onPressed: () {
                   auth.signOut().then((value) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Home2()));
+                        MaterialPageRoute(builder: (context) => const Home2()));
                   }).onError((error, stackTrace) {
                     Utils().toastMessage(error.toString());
                   });
@@ -54,7 +51,7 @@ class _modesState extends State<modes> {
                 width: 500,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             )
 
@@ -62,25 +59,21 @@ class _modesState extends State<modes> {
           ],
           elevation: 0.0,
         ),
-        backgroundColor: Color(0xFFEFF3FB),
+        backgroundColor: const Color(0xFFEFF3FB),
         body: Column(
           children: [
             Container(
               margin: const EdgeInsets.all(5.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xFFEE6B0E),
+                color: const Color(0xFFEE6B0E),
               ),
               child: Row(children: [
                 //first button
                 Container(
                     width: 100,
                     height: 100,
-                    child: Image.asset(
-                      'asset/user.png',
-                      scale: 1.5,
-                    ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
 
                         // image: DecorationImage(
                         //   image: AssetImage(
@@ -90,8 +83,12 @@ class _modesState extends State<modes> {
 
                         //   fit: BoxFit.fill,
                         // ),
-                        )),
-                Text(
+                        ),
+                    child: Image.asset(
+                      'asset/user.png',
+                      scale: 1.5,
+                    )),
+                const Text(
                   'Maliha Zerin',
                   style: TextStyle(
                     fontSize: 24.0,
@@ -102,10 +99,10 @@ class _modesState extends State<modes> {
               ]),
             ),
             //Select Mode Text
-            Padding(
+            const Padding(
                 padding:
                     EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0)),
-            SizedBox(
+            const SizedBox(
               height: 50,
               width: 300,
               child: Text(
@@ -125,24 +122,20 @@ class _modesState extends State<modes> {
               // color: Color(0xFF01BFBF),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xFF01BFBF),
+                color: const Color(0xFF01BFBF),
               ),
 
               child: Row(children:
                   [
                 Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     left: 10.0,
                     right: 30.0,
                   ),
                   child: Container(
                       width: 100,
                       height: 100,
-                      child: Image.asset(
-                        'asset/icons8-keyboard-64.png',
-                        scale: 0.7,
-                      ),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
 
                           // image: DecorationImage(
                           //   image: AssetImage('asset/keyboard.png'),
@@ -153,15 +146,19 @@ class _modesState extends State<modes> {
                           //   'asset/user.png',
                           //   scale: 1.5,
                           // ),
-                          )),
+                          ),
+                      child: Image.asset(
+                        'asset/icons8-keyboard-64.png',
+                        scale: 0.7,
+                      )),
                 ),
 
               GestureDetector(
                 onTap: (){ Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => freehand()),
+                  MaterialPageRoute(builder: (context) => const freehand()),
                 );},
-                child:   Text(
+                child:   const Text(
                   'Free-Hand Mode',
                   style: TextStyle(
                     fontSize: 24.0,
@@ -180,35 +177,35 @@ class _modesState extends State<modes> {
 
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xFF01BFBF),
+                color: const Color(0xFF01BFBF),
               ),
               child:
               Row(children: [
                 Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     left: 10.0,
                     right: 30.0,
                   ),
                   child: Container(
                       width: 100,
                       height: 100,
-                      child: Image.asset(
-                        'asset/icons8-drawing-tablet-64.png',
-                        scale: 0.7,
-                      ),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           // image: DecorationImage(
                           //   image: AssetImage('asset/icons8-drawing-tablet-64.png'),
                           //   fit: BoxFit.fill,
                           // ),
-                          )),
+                          ),
+                      child: Image.asset(
+                        'asset/icons8-drawing-tablet-64.png',
+                        scale: 0.7,
+                      )),
                 ),
                 GestureDetector(
                   onTap: (){ Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => learnmode()),
+                    MaterialPageRoute(builder: (context) => const learnmode()),
                   );},
-                  child:   Text(
+                  child:   const Text(
                     'Learning Mode',
                     style: TextStyle(
                       fontSize: 24.0,
@@ -279,7 +276,7 @@ class _modesState extends State<modes> {
                 if (current_Index == 0) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => connect()),
+                    MaterialPageRoute(builder: (context) => const connect()),
                   );
                 }
             /*    if (current_Index == 2) {

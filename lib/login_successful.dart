@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'connect.dart';
 
 class login extends StatefulWidget {
+  const login({super.key});
+
   @override
   State<login> createState() => _loginState();
 }
@@ -14,12 +13,12 @@ class _loginState extends State<login> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFFFFFFFF),
+        backgroundColor: const Color(0xFFFFFFFF),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(10.0, 60.0, 0.0, 20.0),
+              padding: const EdgeInsets.fromLTRB(10.0, 60.0, 0.0, 20.0),
               child: Center(
                 child: Image.asset(
                   'asset/success.png',
@@ -27,7 +26,7 @@ class _loginState extends State<login> {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
               child: Text(
                 'Success',
@@ -38,7 +37,7 @@ class _loginState extends State<login> {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
               child: Text(
                 'Logged in succesfully',
@@ -50,7 +49,7 @@ class _loginState extends State<login> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SizedBox(
@@ -58,21 +57,21 @@ class _loginState extends State<login> {
               width: 80,
               child: TextButton(
                 onPressed: () {},
-                child: Icon(
-                  Icons.check,
-                  color: Colors.white,
-                  size: 40.0,
-                ),
                 style: TextButton.styleFrom(
                   minimumSize: const Size.fromHeight(50),
-                  backgroundColor: Color(0xFF01BFBF),
+                  backgroundColor: const Color(0xFF01BFBF),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
                 ),
+                child: const Icon(
+                  Icons.check,
+                  color: Colors.white,
+                  size: 40.0,
+                ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             SizedBox(
@@ -82,17 +81,17 @@ class _loginState extends State<login> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => connect()),
+                    MaterialPageRoute(builder: (context) => const connect()),
                   );
                 },
-                child: Text('Connect your device'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(50),
-                  backgroundColor: Color(0xFFEE6B0E),
+                  backgroundColor: const Color(0xFFEE6B0E),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
+                child: const Text('Connect your device'),
               ),
             ),
           ],

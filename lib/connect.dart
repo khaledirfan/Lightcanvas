@@ -1,12 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'mode.dart';
-import 'station.dart';
 import 'signup.dart';
 
 class connect extends StatefulWidget {
+  const connect({super.key});
+
   @override
   State<connect> createState() => _connectState();
 }
@@ -18,7 +16,7 @@ class _connectState extends State<connect> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'LIGHT CANVAS',
             style: TextStyle(
               fontFamily: 'Manrope',
@@ -26,7 +24,7 @@ class _connectState extends State<connect> {
               color: Colors.black,
             ),
           ),
-          backgroundColor: Color(0xFFFFFFFF),
+          backgroundColor: const Color(0xFFFFFFFF),
           automaticallyImplyLeading: false,
           actions: [
             IconButton(
@@ -38,14 +36,14 @@ class _connectState extends State<connect> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => signup()),
+                  MaterialPageRoute(builder: (context) => const signup()),
                 );
               },
             ),
           ],
           elevation: 0.0,
         ),
-        backgroundColor: Color(0xFFEFF3FB),
+        backgroundColor: const Color(0xFFEFF3FB),
         body: Column(
           children: [
             Container(
@@ -53,7 +51,7 @@ class _connectState extends State<connect> {
               height: 200.0,
               width: 200.0,
               margin: const EdgeInsets.only(top: 50.0),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('asset/bluetooth.png'),
                   fit: BoxFit.fill,
@@ -62,10 +60,10 @@ class _connectState extends State<connect> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 20),
+              padding: const EdgeInsets.only(bottom: 20),
               child: Container(
                   margin: const EdgeInsets.all(10.0),
-                  child: Text(
+                  child: const Text(
                     'Select The Device',
                     style: TextStyle(
                       fontSize: 22.0,
@@ -76,7 +74,7 @@ class _connectState extends State<connect> {
             ),
             Container(
               margin: const EdgeInsets.only(bottom: 10.0),
-              child: Text(
+              child: const Text(
                 "Make Sure Bluetooth Is Turned On",
                 style: TextStyle(
                   fontSize: 16.0,
@@ -86,7 +84,7 @@ class _connectState extends State<connect> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             FractionallySizedBox(
@@ -96,11 +94,11 @@ class _connectState extends State<connect> {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
-                  color: Color(0xFFB7B9BC),
+                  color: const Color(0xFFB7B9BC),
                 ),
                 margin: const EdgeInsets.only(left: 20.0, right: 20.0),
                 padding: const EdgeInsets.all(6.0),
-                child: Text("Available Devices"),
+                child: const Text("Available Devices"),
               ),
             ),
             FractionallySizedBox(
@@ -110,14 +108,14 @@ class _connectState extends State<connect> {
               child: Container(
                   margin: const EdgeInsets.only(left: 20.0, right: 20.0),
                   padding: const EdgeInsets.all(6.0),
-                  color: Color(0xFFD9D9D9),
+                  color: const Color(0xFFD9D9D9),
                   // child: Text("Maliha's POCO"),
                   child: GestureDetector(
-                    child: Text("Maliha's POCO"),
+                    child: const Text("Maliha's POCO"),
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => modes()),
+                        MaterialPageRoute(builder: (context) => const modes()),
                       );
                     },
                   )),
@@ -129,8 +127,8 @@ class _connectState extends State<connect> {
               child: Container(
                 margin: const EdgeInsets.only(left: 20.0, right: 20.0),
                 padding: const EdgeInsets.all(6.0),
-                color: Color(0xFFB7B9BC),
-                child: Text("Previously Connected Devices"),
+                color: const Color(0xFFB7B9BC),
+                child: const Text("Previously Connected Devices"),
               ),
             ),
             FractionallySizedBox(
@@ -140,8 +138,8 @@ class _connectState extends State<connect> {
               child: Container(
                 margin: const EdgeInsets.only(left: 20.0, right: 20.0),
                 padding: const EdgeInsets.all(6.0),
-                color: Color(0xFFD9D9D9),
-                child: Text(
+                color: const Color(0xFFD9D9D9),
+                child: const Text(
                   'iphone',
                   style: TextStyle(color: Color.fromARGB(137, 0, 0, 0)),
                 ),
@@ -187,7 +185,7 @@ class _connectState extends State<connect> {
                 if (current_Index == 1) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => modes()),
+                    MaterialPageRoute(builder: (context) => const modes()),
                   );
                 }
               /*  if (current_Index == 2) {
